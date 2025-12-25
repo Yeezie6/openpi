@@ -452,6 +452,51 @@ class LeRobotDROIDDataConfig(DataConfigFactory):
             model_transforms=model_transforms,
         )
 
+@dataclasses.dataclass(frozen=True)
+class LeRobotAdamuDualCameraDataConfig(DataConfigFactory):
+    extra_delta_transform: bool = False
+
+    @override
+    def create(self, assets_dirs: pathlib.Path, model_config: _model.BaseModelConfig) -> DataConfig:
+        repack_transform = _transforms.Group(
+            inputs=[
+                _transforms.RepackTransform(
+                    {
+                        # Destination: Source
+                        "observation/camera_1": "observation.camera_0.rgb",  # Dataset camera_0 → policy camera_1
+                        "observation/camera_2": "observation.camera_1.rgb",  # Dataset camera_1 → policy camera_2
+                        "observation/state": "observation.state",
+                        "actions": "action",  # Pluralize action
+                        "prompt": "task",  # Dataset has "task" with prompt string
+                    }
+                )
+            ]
+        )
+
+        # The data transforms use the AdamUDual policy we created
+        data_transforms = _transforms.Group(
+            inputs=[adamu_dual_policy.AdamuDualInputs(model_type=model_config.model_type)],
+            outputs=[adamu_dual_policy.AdamuDualOutputs()],
+        )
+
+        if self.extra_delta_transform:
+            delta_action_mask = _transforms.make_bool_mask(31)
+            data_transforms = data_transforms.push(
+                inputs=[_transforms.DeltaActions(delta_action_mask)],
+                outputs=[_transforms.AbsoluteActions(delta_action_mask)],
+            )
+
+        model_transforms = ModelTransformFactory()(model_config)
+
+        return dataclasses.replace(
+            self.create_base_config(assets_dirs, model_config),
+            repack_transforms=repack_transform,
+            data_transforms=data_transforms,
+            model_transforms=model_transforms,
+        )
+
+
+        
 
 @dataclasses.dataclass(frozen=True)
 class TrainConfig:
@@ -631,6 +676,39 @@ _CONFIGS = [
             ),
         ),
     ),
+    TrainConfig(
+        name="xxx",
+        model=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=20,
+            discrete_state_input=False,
+        ),
+        data=LeRobotAdamuDualCameraDataConfig(
+            repo_id="/xxx/xxxx",
+            assets=AssetsConfig(
+                # Use task-specific norm stats (need to be generated before training)
+                assets_dir="/xxx/xxxx/assets",
+                asset_id="xxxxx",
+            ),
+            base_config=DataConfig(
+                prompt_from_task=True,
+                use_quantile_norm=True,
+                action_sequence_keys=("action",),
+            ),
+            extra_delta_transform=False,
+        ),
+        batch_size=256,
+        lr_schedule=_optimizer.CosineDecaySchedule(
+            warmup_steps=10_000,
+            peak_lr=5e-5,
+            decay_steps=1_000_000,
+            decay_lr=5e-5,
+        ),
+        optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
+        ema_decay=0.999,
+        weight_loader=weight_loaders.CheckpointWeightLoader("/checkpoint_path/"),
+        num_train_steps=30_000,
+    ),
     #
     # Fine-tuning Libero configs.
     #
@@ -651,21 +729,32 @@ _CONFIGS = [
         # Also modify the DataConfig to use the new config you made for your dataset above.
         data=LeRobotLiberoDataConfig(
             repo_id="physical-intelligence/libero",
-            base_config=DataConfig(
-                # This flag determines whether we load the prompt (i.e. the task instruction) from the
-                # ``task`` field in the LeRobot dataset. If set to True, the prompt will show up in
-                # a field called ``prompt`` in the input dict. The recommended setting is True.
-                prompt_from_task=True,
-            ),
-            extra_delta_transform=True,
+            base_config=DataConfig(prompt_from_task=True),
+            extra_delta_transform=False,
         ),
-        # Here you define which pre-trained checkpoint you want to load to initialize the model.
-        # This should match the model config you chose above -- i.e. in this case we use the pi0 base model.
-        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
-        # Below you can define other hyperparameters like the learning rate, number of training steps, etc.
-        # Check the base TrainConfig class for a full list of available hyperparameters.
+        # Update weight_loader to point to the local PyTorch checkpoint
+        
+        weight_loader=weight_loaders.CheckpointWeightLoader("/mnt/pfs/scalelab/yiqing/openpi/src/openpi/checkpoints/pi0_base_pytorch/params"),
+        pytorch_weight_path="/mnt/pfs/scalelab/yiqing/openpi/src/openpi/checkpoints/pi0_base_pytorch",
         num_train_steps=30_000,
     ),
+    #     data=LeRobotLiberoDataConfig(
+    #         repo_id="physical-intelligence/libero",
+    #         base_config=DataConfig(
+    #             # This flag determines whether we load the prompt (i.e. the task instruction) from the
+    #             # ``task`` field in the LeRobot dataset. If set to True, the prompt will show up in
+    #             # a field called ``prompt`` in the input dict. The recommended setting is True.
+    #             prompt_from_task=True,
+    #         ),
+    #         extra_delta_transform=True,
+    #     ),
+    #     # Here you define which pre-trained checkpoint you want to load to initialize the model.
+    #     # This should match the model config you chose above -- i.e. in this case we use the pi0 base model.
+    #     weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
+    #     # Below you can define other hyperparameters like the learning rate, number of training steps, etc.
+    #     # Check the base TrainConfig class for a full list of available hyperparameters.
+    #     num_train_steps=30_000,
+    # ),
     TrainConfig(
         name="pi0_libero_low_mem_finetune",
         # Here is an example of loading a pi0 model for LoRA fine-tuning.
@@ -739,7 +828,7 @@ _CONFIGS = [
             base_config=DataConfig(prompt_from_task=True),
             extra_delta_transform=False,
         ),
-        batch_size=256,
+        batch_size=64,
         lr_schedule=_optimizer.CosineDecaySchedule(
             warmup_steps=10_000,
             peak_lr=5e-5,
@@ -749,7 +838,7 @@ _CONFIGS = [
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
         ema_decay=0.999,
         weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
-        pytorch_weight_path="/path/to/your/pytorch_weight_path",
+        pytorch_weight_path="/mnt/pfs/scalelab/yiqing/openpi/src/openpi/checkpoints/pi05_base_pytorch",
         num_train_steps=30_000,
     ),
     #

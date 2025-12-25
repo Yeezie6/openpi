@@ -217,3 +217,17 @@ def _quat2axisangle(quat):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     tyro.cli(eval_libero)
+
+
+"""
+python scripts/serve_policy.py   \
+--env LIBERO   --port 8000   policy:checkpoint   \
+--policy.config pi05_libero   \
+--policy.dir /mnt/pfs/scalelab/yiqing/openpi/checkpoints/pi05_libero/multi_gpu_run/30000
+
+python examples/libero/main.py   --args.host 127.0.0.1  \
+--args.port 8000  \
+--args.task-suite-name libero_object   --args.num-trials-per-task 50  \
+--args.video-out-path /mnt/pfs/scalelab/yiqing/openpi/libero_eval_videos/pi05_libero_object
+
+"""

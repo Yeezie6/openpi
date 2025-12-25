@@ -278,7 +278,7 @@ def create_torch_data_loader(
     skip_norm_stats: bool = False,
     shuffle: bool = False,
     num_batches: int | None = None,
-    num_workers: int = 0,
+    num_workers: int = 0,  # 默认值为 0
     seed: int = 0,
     framework: str = "jax",
 ) -> DataLoader[tuple[_model.Observation, _model.Actions]]:
@@ -329,9 +329,10 @@ def create_torch_data_loader(
         shuffle=(sampler is None and shuffle),  # Don't shuffle if using sampler
         sampler=sampler,
         num_batches=num_batches,
-        num_workers=num_workers,
+        num_workers=max(1, os.cpu_count() // 2),  # 设置 num_workers 为 CPU 核心数的一半
         seed=seed,
         framework=framework,
+        pin_memory=True if torch.cuda.is_available() else False,  # 如果使用 GPU，启用 pin_memory
     )
 
     return DataLoaderImpl(data_config, data_loader)
@@ -393,6 +394,7 @@ class TorchDataLoader:
         num_workers: int = 0,
         seed: int = 0,
         framework: str = "jax",
+        pin_memory: bool = False,  # 是否启用 pin_memory
     ):
         """Create a PyTorch data loader.
 
@@ -408,6 +410,7 @@ class TorchDataLoader:
             num_workers: The number of worker processes to use. If zero, the data loader will
                 execute in the main process.
             seed: The seed to use for shuffling the data.
+            pin_memory: Whether to enable pin_memory for faster data transfer to GPU.
         """
         if jax.process_count() > 1:
             raise NotImplementedError("Data loading with multiple processes is not supported.")
@@ -443,6 +446,7 @@ class TorchDataLoader:
             worker_init_fn=_worker_init_fn,
             drop_last=True,
             generator=generator,
+            pin_memory=pin_memory,  # 设置 pin_memory
         )
 
     @property
