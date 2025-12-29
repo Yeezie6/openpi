@@ -695,7 +695,7 @@ _CONFIGS = [
         ),
         data=LeRobotAdamuDualCameraDataConfig(
             # repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_MegaMerge",
-            repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v3",
+            repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v4",
             # assets=AssetsConfig(
             #     # Use task-specific norm stats (need to be generated before training)
             #     assets_dir="/xxx/xxxx/assets",
@@ -720,6 +720,7 @@ _CONFIGS = [
         weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
         pytorch_weight_path="/mnt/pfs/scalelab/yiqing/openpi/src/openpi/checkpoints/pi05_base_pytorch",
         num_train_steps=20_000,
+        num_workers=64,
         
     ),
     #

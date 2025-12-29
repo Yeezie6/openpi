@@ -7,6 +7,12 @@ python merge_pickplace_final.py \
   --output-name PickPlaceBottle_Merged_v3 \
   --camera-ids 0 1 \
   --overwrite
+
+
+python /mnt/pfs/scalelab/yiqing/openpi/annotate/merge_annotations.py
+
+
+ python annotate/update_annotations.py
 ```
 
 # Merge PickPlaceBottle Datasets
@@ -15,7 +21,7 @@ This repository now ships `merge_pickplace_pairs.py`, a self-contained script to
 multiple fully materialized PickPlaceBottle datasets (each with `data/`, `videos/`,
 and `meta/` folders) into a single dataset that is ready for OpenPI training.
 
-## Quick Start
+## Quick Start (not in used)
 
 ```bash
 cd /mnt/pfs/scalelab/yiqing/openpi
@@ -42,11 +48,15 @@ custom camera subsets, and non-default input/output locations.
 ## From episodes.jsonl to tasks.json
 
 ```
-python annotate/generate_tasks_jsonl.py --dataset-path /mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_MegaMerge
+python annotate/generate_tasks_jsonl.py --dataset-path /mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v4
+
+python annotate/update_parquet_task_index.py --dataset-path /mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v4
 ```
 
 ## Compute norms
 ```
+rm -rf /mnt/pfs/scalelab/hf_cache/datasets/parquet
+
 source /mnt/pfs/scalelab/yiqing/openpi/.venv/bin/activate
 PYTHONPATH=$PWD/src python scripts/compute_norm_stats.py --config-name pi05_adamu
 ```
