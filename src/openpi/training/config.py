@@ -20,6 +20,7 @@ import openpi.models.tokenizer as _tokenizer
 import openpi.policies.aloha_policy as aloha_policy
 import openpi.policies.droid_policy as droid_policy
 import openpi.policies.libero_policy as libero_policy
+import openpi.policies.adamu_dual_policy as adamu_dual_policy
 import openpi.shared.download as _download
 import openpi.shared.normalize as _normalize
 import openpi.training.droid_rlds_dataset as droid_rlds_dataset
@@ -677,19 +678,19 @@ _CONFIGS = [
         ),
     ),
     TrainConfig(
-        name="xxx",
+        name="pi05_adamu",
         model=pi0_config.Pi0Config(
             pi05=True,
             action_horizon=20,
             discrete_state_input=False,
         ),
         data=LeRobotAdamuDualCameraDataConfig(
-            repo_id="/xxx/xxxx",
-            assets=AssetsConfig(
-                # Use task-specific norm stats (need to be generated before training)
-                assets_dir="/xxx/xxxx/assets",
-                asset_id="xxxxx",
-            ),
+            repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v2",
+            # assets=AssetsConfig(
+            #     # Use task-specific norm stats (need to be generated before training)
+            #     assets_dir="/xxx/xxxx/assets",
+            #     asset_id="xxxxx",
+            # ),
             base_config=DataConfig(
                 prompt_from_task=True,
                 use_quantile_norm=True,
@@ -697,7 +698,7 @@ _CONFIGS = [
             ),
             extra_delta_transform=False,
         ),
-        batch_size=256,
+        batch_size=128,
         lr_schedule=_optimizer.CosineDecaySchedule(
             warmup_steps=10_000,
             peak_lr=5e-5,
@@ -706,8 +707,10 @@ _CONFIGS = [
         ),
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
         ema_decay=0.999,
-        weight_loader=weight_loaders.CheckpointWeightLoader("/checkpoint_path/"),
-        num_train_steps=30_000,
+        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
+        pytorch_weight_path="/mnt/pfs/scalelab/yiqing/openpi/src/openpi/checkpoints/pi05_base_pytorch",
+        num_train_steps=20_000,
+        
     ),
     #
     # Fine-tuning Libero configs.

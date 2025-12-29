@@ -20,6 +20,8 @@ Multi-Node Training:
     --nnodes=<num_nodes> --nproc_per_node=<gpus_per_node> --node_rank=<rank_of_node> \
     --master_addr=<master_ip> --master_port=<port> \
     scripts/train_pytorch.py <config_name> --exp_name=<run_name> --save_interval <interval>
+    
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --standalone --nnodes=1 --nproc_per_node=4  scripts/train_pytorch.py pi05_adamu --exp_name multigpu_run
 
 """
 
@@ -39,6 +41,8 @@ import torch.distributed as dist
 import torch.nn.parallel
 import tqdm
 import wandb
+
+# No early file logging — logs go to console only until `init_logging()` runs.
 
 import openpi.models.pi0_config
 import openpi.models_pytorch.pi0_pytorch
@@ -61,12 +65,12 @@ def init_logging():
     )
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    if not logger.handlers:
-        ch = logging.StreamHandler()
-        ch.setFormatter(formatter)
-        logger.addHandler(ch)
-    else:
-        logger.handlers[0].setFormatter(formatter)
+    # Ensure at least one console handler exists
+    ch = logging.StreamHandler()
+    ch.setFormatter(formatter)
+    # Remove existing stream handlers to avoid duplicate console logs
+    logger.handlers = [h for h in logger.handlers if not isinstance(h, logging.StreamHandler)]
+    logger.addHandler(ch)
 
 
 def init_wandb(config: _config.TrainConfig, *, resuming: bool, enabled: bool = True):

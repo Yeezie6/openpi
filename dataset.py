@@ -1,13 +1,25 @@
 import shutil
-import numpy as np
-from tqdm import tqdm
-import os, sys
+import os
+import sys
+from pathlib import Path
 from typing import Dict, Any
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from lerobot.common.datasets.lerobot_dataset import LeRobotDataset, compute_stats, serialize_dict, write_json, STATS_PATH
+import numpy as np
+from tqdm import tqdm
 
-HF_LEROBOT_HOME = os.path.abspath(os.path.join(os.path.dirname(__file__), 'datasets'))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from lerobot.common.datasets.lerobot_dataset import LeRobotDataset, compute_stats, serialize_dict, write_json
+
+HF_LEROBOT_HOME = (Path(__file__).resolve().parent / "datasets").resolve()
+HF_LEROBOT_HOME.mkdir(parents=True, exist_ok=True)
+STATS_FILE = Path("meta") / "stats.json"
+
+
+def _resolve_repo_location(path_str: str) -> tuple[str, Path]:
+    candidate = Path(path_str)
+    if candidate.is_absolute():
+        return candidate.name, candidate
+    return candidate.as_posix(), (HF_LEROBOT_HOME / candidate).resolve()
 
 
 class LerobotDatasetWriter:
@@ -23,12 +35,12 @@ class LerobotDatasetWriter:
                  #depth_dmin_m: float = 0.15,  # 全局固定量程（很重要，别 per-frame minmax）
                  #depth_dmax_m: float = 1.00,
                 ):
-        repo_id = output_path
-        output_path = os.path.join(HF_LEROBOT_HOME, output_path)
-        print(output_path)
-        if os.path.exists(output_path):
-            print(f"警告：输出路径 {output_path} 已存在，将被删除。")
-            shutil.rmtree(output_path)
+        repo_id, resolved_root = _resolve_repo_location(output_path)
+        print(resolved_root)
+        if resolved_root.exists():
+            print(f"警告：输出路径 {resolved_root} 已存在，将被删除。")
+            shutil.rmtree(resolved_root)
+        resolved_root.mkdir(parents=True, exist_ok=True)
         
         self.camera_ids = camera_ids
         self.data_type = data_type
@@ -84,7 +96,7 @@ class LerobotDatasetWriter:
 
         self.dataset = LeRobotDataset.create(
             repo_id=repo_id,
-            root=output_path,
+            root=str(resolved_root),
             robot_type="MyDexHand",  # 自定义机器人类型
             fps=fps,
             features=features,
@@ -149,8 +161,8 @@ class LerobotDatasetWriter:
 
 class LerobotDatasetReader:
     def __init__(self, repo_id: str):
-        pth = os.path.join(HF_LEROBOT_HOME, repo_id)
-        self.dataset = LeRobotDataset(repo_id, root=pth, local_files_only=True)
+        repo_id_str, root_path = _resolve_repo_location(repo_id)
+        self.dataset = LeRobotDataset(repo_id_str, root=str(root_path), local_files_only=True)
         self.episode_ends = [x.item()-1 for x in self.dataset.episode_data_index["to"]]
         # print(self.episode_ends)
         # exit(0)
@@ -159,7 +171,7 @@ class LerobotDatasetReader:
         self.dataset.stop_image_writer()
         self.dataset.meta.stats = compute_stats(self.dataset)
         serialized_stats = serialize_dict(self.dataset.meta.stats)
-        write_json(serialized_stats, self.dataset.root / STATS_PATH)
+        write_json(serialized_stats, self.dataset.root / STATS_FILE)
     
     def _get_total_steps(self):
         return len(self.dataset)

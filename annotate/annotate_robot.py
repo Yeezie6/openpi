@@ -31,26 +31,27 @@ logger = logging.getLogger(__name__)
 
 # New System Prompt
 SYS_PROMPT = """
-You are a video annotation AI specialized in identifying high-level manipulation tasks performed by a real robotic dexterous hand (not a human hand) in egocentric or third-person videos.
+You are a video annotation AI specialized in identifying high-level manipulation tasks performed by a real robotic dexterous hand (not a human hand) in first-person videos.
 
 Input:
-You will receive a sequence of video frames sampled every 0.5 seconds, showing a physical robotic dexterous hand interacting with objects in the real world.
+You will receive a sequence of video frames sampled uniformly over time. The video shows a physically embodied robotic dexterous hand interacting with objects in the real world.
 
 Task:
-Generate a single-sentence task description that summarizes the main manipulation action performed by the robotic hand in the video.
+Generate a single-sentence task description that summarizes the main manipulation task performed by the robotic hand in the video.
 
 The task description MUST include:
-- Which robotic hand is used (left robotic hand, right robotic hand, or both robotic hands).
-- The grasp taxonomy used by the robotic hand (e.g., extension grasp, power grasp, precision grasp).
-- The object being manipulated, with at least one distinctive feature (e.g., color, shape, position, or material).
-- The specific part of the object that is grasped or contacted by the robotic hand (e.g., handle, edge, stem, lid, surface).
+- The grasp taxonomy used by the robotic hand (as provided in the Additional context).
+- The number of fingers of the robotic hand that are in contact with the object during grasping (as provided in the Additional context).
+- The name of the manipulated object (as provided in the Additional context), including at least one distinctive feature to disambiguate it (e.g., color, shape, position, or material).
+- Since all videos depict pick-and-place tasks, clearly describe where the object is picked from and where it is placed to, explicitly stating the start location and the target location.
+- Explicitly specify whether the left or right robotic hand is used for the manipulation.
 
 Guidelines:
 - Use one sentence only.
 - Use clear, concise, and concrete language suitable for robotic manipulation tasks.
 - Use imperative or task-description style (e.g., “Use the right robotic hand to…”).
-- Assume the manipulator is a real, physical dexterous robotic hand, not a human hand.
-- Do not describe human anatomy (e.g., palm, fingernail, skin).
+- Assume the manipulator is a real, physical robotic dexterous hand, not a human hand.
+- Do not describe human anatomy (e.g., palm, fingernails, skin).
 - If no meaningful robotic hand–object interaction is present, return null.
 
 Output format:
@@ -143,9 +144,20 @@ def extract_frames(video_path: str, extract_fps: int, valid_segment_list: Option
             if start_frame_idx >= end_frame_idx:
                 continue
 
+            # Sample frames at extract_fps (2 fps)
             extract_frame_num = int((end - start) * extract_fps) + 1
             frame_indexes = np.linspace(start_frame_idx, end_frame_idx - 1, extract_frame_num, dtype=int).tolist()
             
+            # Downsample to exactly 15 frames uniformly if we have more than 15
+            if len(frame_indexes) > 15:
+                indices = np.linspace(0, len(frame_indexes) - 1, 15, dtype=int)
+                frame_indexes = [frame_indexes[i] for i in indices]
+            elif len(frame_indexes) < 15 and len(frame_indexes) > 0:
+                 # If less than 15 frames, we keep what we have (or we could duplicate, but usually better to keep original)
+                 # The requirement says "average sample 15 frames", implying we should aim for 15.
+                 # If the video is too short to provide 15 unique frames at 2fps, we just take what we have.
+                 pass
+
             try:
                 frames = vr.get_batch(frame_indexes).asnumpy()
                 chunk_images = []
@@ -173,6 +185,73 @@ def pil_to_base64_png(img: Image.Image) -> str:
     return f"data:image/png;base64,{b64}"
 
 
+def load_additional_info(txt_file_path: str) -> Dict[str, str]:
+    """
+    从txt文件中加载补充信息。
+    txt文件格式：每行包含视频索引范围和对应的信息，例如：
+    0-10: 使用三指抓取
+    """
+    additional_info: Dict[str, str] = {}
+
+    def parse_index(token: str) -> Optional[int]:
+        token = token.strip()
+        if not token:
+            return None
+        # token like episode_000123
+        if token.startswith('episode_'):
+            digits = token[len('episode_'):]
+            if digits.isdigit():
+                return int(digits)
+            return None
+        # pure digits
+        if token.isdigit():
+            return int(token)
+        return None
+
+    try:
+        with open(txt_file_path, 'r', encoding='utf-8') as f:
+            for raw in f:
+                line = raw.strip()
+                if not line or line.startswith('#'):
+                    continue
+                if ':' not in line:
+                    logger.warning(f"跳过无效行（缺少冒号）: {line}")
+                    continue
+                key_part, info = line.split(':', 1)
+                info = info.strip()
+                # 支持逗号分隔多个 key/range
+                for part in key_part.split(','):
+                    part = part.strip()
+                    if not part:
+                        continue
+                    # range like 0-10 or episode_000010-episode_000020
+                    if '-' in part:
+                        left, right = part.split('-', 1)
+                        left_idx = parse_index(left)
+                        right_idx = parse_index(right)
+                        if left_idx is not None and right_idx is not None:
+                            if left_idx > right_idx:
+                                left_idx, right_idx = right_idx, left_idx
+                            for idx in range(left_idx, right_idx + 1):
+                                # map both numeric and zero-padded episode name
+                                additional_info[str(idx)] = info
+                                additional_info[f'episode_{idx:06d}'] = info
+                        else:
+                            logger.warning(f"无法解析区间: {part}，跳过。")
+                    else:
+                        idx = parse_index(part)
+                        if idx is not None:
+                            additional_info[str(idx)] = info
+                            additional_info[f'episode_{idx:06d}'] = info
+                        else:
+                            # treat as literal key (e.g., full episode name if non-standard)
+                            additional_info[part] = info
+    except Exception as e:
+        logger.error(f"加载补充信息时出错: {e}")
+
+    return additional_info
+
+
 class OpenAIAnalyzer:
     """Handle OpenAI API interactions (multi-modal chat)."""
 
@@ -184,13 +263,17 @@ class OpenAIAnalyzer:
         self.model = model
         logger.info("OpenAI client initialized successfully")
 
-    def analyze_hand_movements(self, frames: List[Image.Image], task_name: str) -> Dict[str, Any]:
+    def analyze_hand_movements(self, frames: List[Image.Image], task_name: str, additional_info: Optional[str] = None) -> Dict[str, Any]:
         try:
             prompt = (
                 f"Analyze the video frames in the scene. Here we provide {len(frames)} "
                 f"frames sampled from a video of {(len(frames) - 1) // 2} seconds. "
                 "Follow the instruction to analyze the hand movements and interactions."
             )
+
+            # 如果有补充信息，将其加入到prompt中
+            if additional_info:
+                prompt += f"\nAdditional context: {additional_info}"
 
             # Build content: system + user(text+images)
             user_content = [{"type": "text", "text": prompt}]
@@ -215,7 +298,7 @@ class OpenAIAnalyzer:
                     )
                     # Extract text
                     response_text = resp.choices[0].message.content.strip()
-                    
+
                     # Return simple dict with text
                     return {"task_description": response_text}
 
@@ -288,7 +371,7 @@ class ResultAggregator:
         logger.info(f"Results saved to {output_file}")
 
 
-def worker_process(task_queue: mp.Queue, result_queue: mp.Queue, openai_api_key: str, model: str, worker_output_path: str, worker_id: int):
+def worker_process(task_queue: mp.Queue, result_queue: mp.Queue, openai_api_key: str, model: str, worker_output_path: str, worker_id: int, additional_info_map: Dict[str, str]):
     logger.info(f"Worker {worker_id} started")
 
     analyzer = OpenAIAnalyzer(openai_api_key, model)
@@ -315,7 +398,10 @@ def worker_process(task_queue: mp.Queue, result_queue: mp.Queue, openai_api_key:
                     logger.warning(f"Skipping chunk from {start} to {end} seconds due to insufficient frames")
                     continue
 
-                annotations = analyzer.analyze_hand_movements(chunked_frames, file_metadata["task_name"])
+                # 获取补充信息
+                additional_info = additional_info_map.get(file_metadata["video_idx"], None)
+
+                annotations = analyzer.analyze_hand_movements(chunked_frames, file_metadata["task_name"], additional_info)
                 if annotations:
                     annotations["base_name"] = file_metadata["base_name"]
                     annotations["start_second"] = start
@@ -344,7 +430,7 @@ def worker_process(task_queue: mp.Queue, result_queue: mp.Queue, openai_api_key:
 
 
 class VideoAnnotationPipeline:
-    def __init__(self, task_log_file_path: str, openai_api_key_list: List[str], model: str, num_processes: int = 4, node_id: int = 0, node_num: int = 1):
+    def __init__(self, task_log_file_path: str, openai_api_key_list: List[str], model: str, num_processes: int = 4, node_id: int = 0, node_num: int = 1, additional_info_map: Optional[Dict[str, str]] = None):
         # task_log_file_path is now the directory path
         self.task_log_file_path = task_log_file_path
         self.result_aggregator = ResultAggregator()
@@ -353,6 +439,7 @@ class VideoAnnotationPipeline:
         self.num_processes = num_processes
         self.node_id = node_id
         self.node_num = node_num
+        self.additional_info_map = additional_info_map or {}
 
     def run(self, output_file: str, output_dir: str = "./video_anno") -> Dict[str, Any]:
         logger.info("Discovering video files...")
@@ -385,7 +472,7 @@ class VideoAnnotationPipeline:
             p = mp.Process(
                 target=worker_process,
                 args=(task_queue, result_queue, self.openai_api_key_list[i % len(self.openai_api_key_list)], self.model,
-                      os.path.join(output_dir, f"worker_output_{i + self.node_id * self.num_processes}.jsonl"), i + 1 + self.node_id * self.num_processes)
+                      os.path.join(output_dir, f"worker_output_{i + self.node_id * self.num_processes}.jsonl"), i + 1 + self.node_id * self.num_processes, self.additional_info_map)
             )
             p.start()
             processes.append(p)
@@ -451,7 +538,7 @@ def main():
 
     # Configuration
     # Provide your OpenAI API keys list via env or inline
-    OPENAI_API_KEYS = ["sk-aPCXdOLYxqjFbNKwvh4JeqKbTLpTs30mY2MvjvKcoK78uDzm"]  # TODO: replace with real keys or load from env
+    OPENAI_API_KEYS = ["sk-IF2Cfo0egVGW5RgYpsDFhw9MvBKSw7sptMNgzpOo7SCheoMs"]  # TODO: replace with real keys or load from env
 
     # Treat -1 as "until end"
     if api_key_ed == -1:
@@ -463,7 +550,7 @@ def main():
         raise ValueError("No OpenAI API keys selected. Adjust start/end indices or provide keys.")
 
     # TODO: Confirm the correct multi-modal model name (e.g., "gpt-4o-mini" / "gpt-4o")
-    MODEL_NAME = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+    MODEL_NAME = os.getenv("OPENAI_MODEL", "gemini-2.5-flash-lite")
 
     print(f"Using {len(api_key_list)} API key(s) for OpenAI")
     print(f"Using model: {MODEL_NAME}")
@@ -473,8 +560,8 @@ def main():
     NUM_PROCESSES = 1
     
     # Updated output paths to avoid conflict with original script
-    OUTPUT_DIR = "/share/HaWoR/cc/openai_robot"
-    OUTPUT_FILE = "/share/HaWoR/cc/openai_robot/annotations_robot.json"
+    OUTPUT_DIR = "/mnt/pfs/scalelab/yiqing/openpi/annotate"
+    OUTPUT_FILE = "/mnt/pfs/scalelab/yiqing/openpi/annotate/annotations_robot.json"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # Pre-flight connectivity test (simple empty text request)
@@ -494,16 +581,26 @@ def main():
         return
 
     # Updated dataset path
-    DATASET_PATH = "PickPlaceBottle/PickPlaceBottle_Merged_v2/videos/chunk-000"
+    DATASET_PATH = "/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v2/videos/chunk-000/observation.camera_0.rgb"
     
     
+    # Load additional info txt and pass to pipeline
+    ADDITIONAL_INFO_TXT = "/mnt/pfs/scalelab/yiqing/openpi/annotate/video_grasptype.txt"
+    additional_info_map = {}
+    if os.path.exists(ADDITIONAL_INFO_TXT):
+        additional_info_map = load_additional_info(ADDITIONAL_INFO_TXT)
+        logger.info(f"Loaded {len(additional_info_map)} additional info entries from {ADDITIONAL_INFO_TXT}")
+    else:
+        logger.warning(f"Additional info file not found: {ADDITIONAL_INFO_TXT}")
+
     pipeline = VideoAnnotationPipeline(
         task_log_file_path=DATASET_PATH,
         openai_api_key_list=api_key_list,
         model=MODEL_NAME,
         num_processes=NUM_PROCESSES,
         node_id=node_id,
-        node_num=node_num
+        node_num=node_num,
+        additional_info_map=additional_info_map
     )
 
     try:
