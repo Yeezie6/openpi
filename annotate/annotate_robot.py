@@ -560,8 +560,8 @@ def main():
     NUM_PROCESSES = 1
     
     # Updated output paths to avoid conflict with original script
-    OUTPUT_DIR = "/mnt/pfs/scalelab/yiqing/openpi/annotate"
-    OUTPUT_FILE = "/mnt/pfs/scalelab/yiqing/openpi/annotate/annotations_robot.json"
+    OUTPUT_DIR = "/mnt/pfs/scalelab/yiqing/openpi/annotate/intermidiate_annot_result"
+    OUTPUT_FILE = "/mnt/pfs/scalelab/yiqing/openpi/annotate/intermidiate_annot_result/annotations_robot_v3.json"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # Pre-flight connectivity test (simple empty text request)
@@ -581,11 +581,11 @@ def main():
         return
 
     # Updated dataset path
-    DATASET_PATH = "/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v2/videos/chunk-000/observation.camera_0.rgb"
+    DATASET_PATH = "/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v3/videos/chunk-000/observation.camera_0.rgb"
     
     
     # Load additional info txt and pass to pipeline
-    ADDITIONAL_INFO_TXT = "/mnt/pfs/scalelab/yiqing/openpi/annotate/video_grasptype.txt"
+    ADDITIONAL_INFO_TXT = "/mnt/pfs/scalelab/yiqing/openpi/annotate/video_grasptype_v3.txt"
     additional_info_map = {}
     if os.path.exists(ADDITIONAL_INFO_TXT):
         additional_info_map = load_additional_info(ADDITIONAL_INFO_TXT)

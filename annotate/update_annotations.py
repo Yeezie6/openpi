@@ -2,8 +2,8 @@ import json
 import re
 
 # Paths
-annotations_path = '/mnt/pfs/scalelab/yiqing/openpi/annotate/annotations_robot_1.json'
-episodes_path = '/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_2_v2/meta/episodes.jsonl'
+annotations_path = '/mnt/pfs/scalelab/yiqing/openpi/annotate/intermidiate_annot_result/annotations_robot_v3.json'
+episodes_path = '/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v3/meta/episodes.jsonl'
 
 # Load annotations_robot.json
 annotations_map = {}

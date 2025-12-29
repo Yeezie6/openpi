@@ -694,7 +694,8 @@ _CONFIGS = [
             discrete_state_input=False,
         ),
         data=LeRobotAdamuDualCameraDataConfig(
-            repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v2",
+            # repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_MegaMerge",
+            repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v3",
             # assets=AssetsConfig(
             #     # Use task-specific norm stats (need to be generated before training)
             #     assets_dir="/xxx/xxxx/assets",
@@ -707,7 +708,7 @@ _CONFIGS = [
             ),
             extra_delta_transform=False,
         ),
-        batch_size=128,
+        batch_size=64,
         lr_schedule=_optimizer.CosineDecaySchedule(
             warmup_steps=10_000,
             peak_lr=5e-5,

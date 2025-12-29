@@ -1,0 +1,64 @@
+0-19:large diameter grasp; 5 fingers;the cylindrical Pringles chip can
+20-39:large diameter grasp; 5 fingers;the spray bottle
+40-59:precision sphere; 5 fingers;the cylindrical Pringles chip can
+60-79:medium wrap grasp, press the sprayer head; 3 fingers; the sprayer head;the spray bottle
+80-99:precision sphere; 4 fingers;the spray bottle
+100-119: medium wrap grasp; 5 fingers;the spray bottle
+120-141: prismatic 4 finger grasp; 5 fingers; the cylindrical Pringles chip can
+142-161:prismatic 2 finger grasp; 3 fingers; the cylindrical Pringles chip can
+162-180:prismatic 3 finger grasp; 4 fingers; the cylindrical Pringles chip can
+181-201:ring; 2 fingers; the spray bottle
+202-204:large diameter grasp; 3 fingers; the spray bottle
+205-207: ring; 2 fingers; the spray bottle
+208-216:large diameter grasp; 3 fingers; the spray bottle
+217-220:ring; 2 fingers;the spray bottle
+221-240:adduction grip , lift the spray bottle; 2 fingers;the spray bottle
+241-260: power sphere; 5 fingers; the spray bottle
+261-280: medium wrap grasp; 3 fingers; the spray bottle
+281-300: tip pinch; 2 fingers ; the spray bottle
+301-310:prismatic 3 finger grasp; 4 fingers; the spray bottle
+311-320:ring; 2 fingers; the spray bottle
+321-330:adduction grip , lift the spray bottle; 2 fingers;the spray bottle
+331-360: power sphere; 5 fingers; the cylindrical Pringles chip can
+361-390:extension type; 5 fingers; the cylindrical Pringles chip can
+0-20:extension type; 5 fingers; the cylindrical Pringles chip can
+21-29:precision sphere; 5 fingers; the cylindrical Pringles chip can
+30-59:large diameter grasp; 5 fingers;the cylindrical Pringles chip can
+60-79:large diameter grasp; 3 fingers;the spray bottle
+80-81:large diameter grasp; 5 fingers;the spray bottle
+82-89:large diameter grasp; 3 fingers;the spray bottle
+90-99:adduction grip, lift the spray bottle; 2 fingers; the spray bottle
+100-109:medium wrap grasp; 5 fingers; main body
+110-119:tip pinch; 2 fingers; the spray bottle
+120-129:power sphere; 5 fingers; the spray bottle
+130-139:medium wrap grasp; 5 fingers;the spray bottle
+140-149:prismatic 4 finger grasp; 5 fingers; the spray bottle
+150-159:large diameter grasp; 5 fingers;the cylindrical Pringles chip can
+160-169:prismatic 4 finger grasp; 5 fingers; the cylindrical Pringles chip can
+170-179:extension type; 5 fingers; the cylindrical Pringles chip can
+180-189:extension type; 5 fingers; the cylindrical Pringles chip can
+190-199:prismatic 4 finger grasp; 5 fingers; the cylindrical Pringles chip can
+200-209:medium wrap grasp; 5 fingers;the spray bottle
+210-219:adduction grip, lift the spray bottle; 2 fingers; the spray bottle
+220-229:prismatic 4 finger grasp; 5 fingers; the spray bottle
+230-239:prismatic 4 finger grasp; 5 fingers; the spray bottle
+240-249:large diameter grasp; 5 fingers; the spray bottle
+250-254:prismatic 4 finger grasp; 5 fingers; the spray bottle
+255-259:large diameter grasp; 5 fingers; the spray bottle
+260-269:medium wrap grasp, press the sprayer head; 3 fingers; the sprayer head ; the spray bottle
+270-279:tip pinch; 2 fingers; the spray bottle
+280-289:precision sphere; 5 fingers; the cylindrical Pringles chip can
+290-299:prismatic 4 finger grasp; 5 fingers; the cylindrical Pringles chip can
+300-309:prismatic 4 finger grasp; 5 fingers; the cylindrical Pringles chip can
+310-319:prismatic 4 finger grasp; 5 fingers; the cylindrical Pringles chip can
+320-329:power sphere; 5 fingers; the cylindrical Pringles chip can
+330-339:power sphere; 5 fingers; the spray bottle
+340-349:prismatic 4 finger grasp; 5 fingers;  the spray bottle
+350-359:medium wrap grasp, press the sprayer head; 3 fingers; the sprayer head ; the spray bottle
+360-369:prismatic 4 finger grasp; 5 fingers;  the spray bottle
+370-379:adduction grip, lift the spray bottle; 2 fingers; the spray bottle
+380-389:prismatic 4 finger grasp; 5 fingers; the cylindrical Pringles chip can
+390-399:precision sphere; 4 fingers; the cylindrical Pringles chip can
+400-409:power sphere; 5 fingers; the cylindrical Pringles chip can
+410-419:prismatic 4 finger grasp; 5 fingers; the cylindrical Pringles chip can
+420-429:medium wrap grasp; 5 fingers;the spray bottle
