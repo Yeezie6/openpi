@@ -184,7 +184,13 @@ def copy_episode(
     src_data = source_root / DATA_SUBDIR / f"chunk-{src_chunk:03d}" / f"episode_{local_idx:06d}.parquet"
     dst_data_dir = target_root / DATA_SUBDIR / f"chunk-{dst_chunk:03d}"
     dst_data_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(src_data, dst_data_dir / f"episode_{global_idx:06d}.parquet")
+    
+    # Read source parquet, update episode_index, and write to destination
+    table = pq.read_table(src_data)
+    if "episode_index" in table.column_names:
+        table = table.remove_column(table.column_names.index("episode_index"))
+    table = table.append_column("episode_index", [np.full(table.num_rows, global_idx, dtype=np.int64)])
+    pq.write_table(table, dst_data_dir / f"episode_{global_idx:06d}.parquet")
 
     for cam_id in camera_ids:
         src_video = (
