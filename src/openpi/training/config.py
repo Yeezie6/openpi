@@ -723,6 +723,66 @@ _CONFIGS = [
         num_workers=64,
         
     ),
+    TrainConfig(
+        name="pi05_adamu_continue",
+        model=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=20,
+            discrete_state_input=False,
+        ),
+        data=LeRobotAdamuDualCameraDataConfig(
+            repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v4",
+            base_config=DataConfig(
+                prompt_from_task=True,
+                use_quantile_norm=True,
+                action_sequence_keys=("action",),
+            ),
+            extra_delta_transform=False,
+        ),
+        batch_size=64,
+        lr_schedule=_optimizer.CosineDecaySchedule(
+            warmup_steps=0,
+            peak_lr=5e-5,
+            decay_steps=20_000,
+            decay_lr=5e-5,
+        ),
+        optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
+        ema_decay=0.999,
+        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
+        pytorch_weight_path="/mnt/pfs/scalelab/yiqing/openpi/checkpoints/pi05_adamu/pi05_adamu_v4/20000",
+        num_train_steps=20_000,
+        num_workers=64,
+    ),
+    TrainConfig(
+        name="pi05_adamu_naive",
+        model=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=20,
+            discrete_state_input=False,
+        ),
+        data=LeRobotAdamuDualCameraDataConfig(
+            repo_id="/mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v4",
+            base_config=DataConfig(
+                prompt_from_task=True,
+                use_quantile_norm=True,
+                action_sequence_keys=("action",),
+            ),
+            extra_delta_transform=False,
+        ),
+        batch_size=64,
+        lr_schedule=_optimizer.CosineDecaySchedule(
+            warmup_steps=10_000,
+            peak_lr=5e-5,
+            decay_steps=1_000_000,
+            decay_lr=5e-5,
+        ),
+        optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
+        ema_decay=0.999,
+        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
+        pytorch_weight_path="/mnt/pfs/scalelab/yiqing/openpi/src/openpi/checkpoints/pi05_base_pytorch",
+        num_train_steps=50_000,
+        num_workers=64,
+    ),
     #
     # Fine-tuning Libero configs.
     #

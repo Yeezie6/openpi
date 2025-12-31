@@ -1,0 +1,2 @@
+Starting update script
+Loading tasks from /mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v4/meta/tasks.jsonl
