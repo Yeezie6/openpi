@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Grasp",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The robot's gripper performs a Power:Large Diameter grasp on the Pringles can by closing its parallel jaws around the cylindrical body.",
+  "palm_contact": false,
+  "contact_details": "The robot's gripper is grasping the Pringles can around its cylindrical body. The gripper appears to be a parallel jaw gripper, with the jaws closed around the can. The contact points are along the sides of the can, where the gripper jaws are in contact."
+}

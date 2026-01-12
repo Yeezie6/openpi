@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Handle",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The thumb and index finger wrap around the cylindrical body of the Pringles can, with the middle finger providing additional support, performing a Power:Large Diameter grasp to handle the object.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger are wrapped around the cylindrical body of the Pringles can. The middle finger appears to be making contact with the side of the can as well, providing additional support. The distal phalanges of these fingers are the primary points of contact."
+}

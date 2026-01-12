@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Handle",
+  "grasp_type": "Precision:Sphere 3-Finger",
+  "description": "The fingertips grasp the Pringles can, performing a Precision:Sphere 3-Finger grasp to handle it.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger are in contact with the sides of the Pringles can, with the fingertips likely providing the primary grip. The middle finger may also be in contact, providing additional support."
+}

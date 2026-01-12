@@ -1,0 +1,8 @@
+{
+  "grasp_type": "Precision:Prismatic_2_Finger",
+  "grasp_category": "Intermediate",
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-3",
+  "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper cup from the table and place it on top of another white paper cup."
+}

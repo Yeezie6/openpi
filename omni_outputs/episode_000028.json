@@ -1,0 +1,8 @@
+{
+  "object_name": "spray bottle",
+  "affordance": "Pour",
+  "grasp_type": "Intermediate:Cylindrical Grasp",
+  "description": "The thumb and index finger grip the neck of the spray bottle, while the middle and ring fingers support its body, performing an Intermediate:Cylindrical Grasp to pour.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger are gripping the neck of the spray bottle, while the middle and ring fingers are supporting the body of the bottle. The pinky finger is not in contact."
+}

@@ -1,0 +1,8 @@
+{
+  "object_name": "bottle",
+  "affordance": "grasp",
+  "grasp_type": "Precision:Tripod",
+  "description": "The thumb and index finger grasp the neck of the bottle, while the middle finger contacts the body, performing a Precision:Tripod grasp to lift it.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger are in contact with the neck of the bottle, while the middle finger is also making contact with the body of the bottle."
+}

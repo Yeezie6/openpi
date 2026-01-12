@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Handle",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The thumb and index finger grasp the handle of the Pringles can, performing a Power:Large Diameter grasp with cylindrical support from the other fingers.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger are in contact with the sides of the Pringles can, with the other fingers also providing support around the circumference. The grasp appears to be a cylindrical grasp."
+}

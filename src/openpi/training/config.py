@@ -724,7 +724,7 @@ _CONFIGS = [
         
     ),
     TrainConfig(
-        name="pi05_adamu_continue",
+        name="pi05_adamu_continue_1",
         model=pi0_config.Pi0Config(
             pi05=True,
             action_horizon=20,
@@ -749,7 +749,7 @@ _CONFIGS = [
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
         ema_decay=0.999,
         weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
-        pytorch_weight_path="/mnt/pfs/scalelab/yiqing/openpi/checkpoints/pi05_adamu/pi05_adamu_v4/20000",
+        pytorch_weight_path="/mnt/pfs/scalelab/yiqing/openpi/checkpoints/pi05_adamu_continue/pi05_adamu_v4_continue/20000",
         num_train_steps=20_000,
         num_workers=64,
     ),

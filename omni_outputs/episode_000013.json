@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Grasp",
+  "grasp_type": "Precision:Pinch",
+  "description": "The fingertips of the right hand grasp the Pringles can using a Precision:Pinch grasp, with the thumb and index finger encircling the cylindrical body.",
+  "palm_contact": false,
+  "contact_details": "The object is grasped by the fingertips of the right hand, with the thumb and index finger forming a pincer grip around the cylindrical body of the can. The middle finger also appears to be in contact, providing additional support."
+}

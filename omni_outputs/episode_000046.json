@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Grasp",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The fingertips grasp the Pringles can using a Power:Large Diameter grasp, with contact on the cylindrical surface for stability.",
+  "palm_contact": false,
+  "contact_details": "The fingertips of the robotic hand are in contact with the cylindrical surface of the Pringles can, providing a stable grip."
+}

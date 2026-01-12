@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Grasp",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The fingertips and sides of the right hand's fingers wrap around the cylindrical body of the Pringles can, with the thumb providing counter-pressure, performing a Power:Large Diameter grasp to hold it.",
+  "palm_contact": false,
+  "contact_details": "The fingers of the right hand are wrapped around the cylindrical body of the Pringles can. Specifically, the fingertips and the sides of the fingers are in contact with the can's surface. The thumb is positioned opposite the fingers, providing counter-pressure."
+}

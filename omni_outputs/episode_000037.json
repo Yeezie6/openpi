@@ -1,0 +1,8 @@
+{
+  "object_name": "spray bottle",
+  "affordance": "Pour",
+  "grasp_type": "Precision:Tripod",
+  "description": "The robot's gripper performs a Precision:Tripod grasp on the neck of the spray bottle to pour its contents.",
+  "palm_contact": false,
+  "contact_details": "The robot's gripper is grasping the neck of the spray bottle. The thumb and index finger are in contact with the sides of the neck, while the middle finger appears to be supporting from underneath or the side."
+}

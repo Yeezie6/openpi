@@ -24,7 +24,7 @@ Yiqing Wang Exanmple
     - pi05_adamu
     # Example usage:
     python scripts/run_server_adamu.py \
-        --checkpoint /mnt/pfs/scalelab/yiqing/openpi/checkpoints/pi05_adamu_continue/pi05_adamu_v4_continue/20000 \
+        --checkpoint /mnt/pfs/scalelab/yiqing/openpi/checkpoints/pi05_adamu_continue_1/pi05_adamu_continue_1/20000 \
         --config pi05_adamu_continue \
         --host 0.0.0.0 \
         --port 5555 \

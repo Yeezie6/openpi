@@ -12,38 +12,10 @@ python merge_pickplace_final.py \
 python /mnt/pfs/scalelab/yiqing/openpi/annotate/merge_annotations.py
 
 
- python annotate/update_annotations.py
+python annotate/update_annotations.py
 ```
 
-# Merge PickPlaceBottle Datasets
-
-This repository now ships `merge_pickplace_pairs.py`, a self-contained script to merge
-multiple fully materialized PickPlaceBottle datasets (each with `data/`, `videos/`,
-and `meta/` folders) into a single dataset that is ready for OpenPI training.
-
-## Quick Start (not in used)
-
-```bash
-cd /mnt/pfs/scalelab/yiqing/openpi
-python merge_pickplace_pairs.py \
-  --inputs \
-    /mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v2 \
-    /mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_Merged_v3 \
-  --output-dir /mnt/pfs/scalelab/yiqing/openpi/PickPlaceBottle/PickPlaceBottle_MegaMerge \
-  --overwrite
-```
-
-## Script Behavior
-
-- Copies every parquet episode file and all requested camera videos.
-- Rebuilds `meta/episodes.jsonl`, `meta/tasks.jsonl`, `meta/info.json` with the new episode counts.
-- Filters camera features based on `--camera-ids` (defaults to all RGB cameras detected in the
-  first dataset).
-- Recomputes normalization statistics (`meta/stats.json` and `norm_stats.json`).
-- Optionally copies preview images when `--copy-images` is provided.
-
-Refer to `python merge_pickplace_pairs.py --help` for all flags such as chunk-size overrides,
-custom camera subsets, and non-default input/output locations.
+#
 
 ## From episodes.jsonl to tasks.json
 

@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Grasp",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The robot's gripper grasps the Pringles can around its cylindrical body using a Power:Large Diameter grasp.",
+  "palm_contact": false,
+  "contact_details": "The robot's gripper is grasping the Pringles can around its cylindrical body. The gripper fingers appear to be making contact with the sides of the can, providing a secure hold."
+}

@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Handle",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The fingers of the right hand wrap around the Pringles can, performing a Power:Large Diameter grasp to handle it.",
+  "palm_contact": false,
+  "contact_details": "The fingers of the right hand are wrapped around the cylindrical body of the Pringles can. Specifically, the distal phalanges of the index, middle, and ring fingers appear to be in contact with the can's surface, providing a grip. The thumb is also likely in contact, opposing the fingers to secure the grasp."
+}

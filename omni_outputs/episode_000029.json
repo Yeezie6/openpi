@@ -1,0 +1,8 @@
+{
+  "object_name": "plastic bottle",
+  "affordance": "Pour",
+  "grasp_type": "Precision:Tripod",
+  "description": "The thumb and index finger grasp the neck of the plastic bottle, while the middle finger contacts the body, performing a Precision:Tripod grasp to enable pouring.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger are grasping the neck of the bottle, while the middle finger is also in contact with the body of the bottle. The other fingers are not in contact."
+}

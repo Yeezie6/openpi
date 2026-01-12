@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Lift",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The thumb and index finger grasp the top of the Pringles can, while the middle finger contacts further down the side, performing a Power:Large Diameter grasp to lift it.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger are in contact with the top portion of the Pringles can, while the middle finger is also making contact further down the side. The other fingers are not in contact."
+}

@@ -1,0 +1,8 @@
+{
+  "object_name": "canister",
+  "affordance": "Lift",
+  "grasp_type": "Precision:Pinch",
+  "description": "The index finger and thumb of the left hand pinch the upper portion of the canister, with the middle finger also contacting the side, performing a Precision:Pinch grasp to lift it.",
+  "palm_contact": false,
+  "contact_details": "The index finger and thumb of the left hand are in contact with the upper portion of the canister. The middle finger also appears to be making contact with the side of the canister."
+}

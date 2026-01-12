@@ -1,0 +1,8 @@
+{
+  "object_name": "spray bottle",
+  "affordance": "Handle",
+  "grasp_type": "Precision:Pinch",
+  "description": "The index finger and thumb pinch the handle of the spray bottle, performing a Precision:Pinch grasp while the middle finger contacts the side of the bottle.",
+  "palm_contact": false,
+  "contact_details": "The index finger and thumb are in a pincer grip around the neck of the spray bottle. The middle finger is also in contact with the side of the bottle."
+}

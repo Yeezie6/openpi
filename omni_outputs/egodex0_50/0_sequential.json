@@ -1,0 +1,306 @@
+[
+  {
+    "second": 0,
+    "frame_indices": [
+      0,
+      7,
+      15
+    ],
+    "analysis": {
+      "grasp_type": "Intermediate:Lateral",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with an Intermediate:Lateral grasp, involving 1 vs 2-3 fingers, to pick up the tall white paper cup from the table and place it on the red cloth."
+    }
+  },
+  {
+    "second": 1,
+    "frame_indices": [
+      15,
+      22,
+      30
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper cup from the table and place it on the red cloth."
+    }
+  },
+  {
+    "second": 2,
+    "frame_indices": [
+      30,
+      37,
+      45
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper cup from the table and place it on top of another white paper cup."
+    }
+  },
+  {
+    "second": 3,
+    "frame_indices": [
+      45,
+      52,
+      60
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to place the lid onto the white paper coffee cup from the table."
+    }
+  },
+  {
+    "second": 4,
+    "frame_indices": [
+      60,
+      67,
+      75
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper coffee cup from the table and place it on the red cloth."
+    }
+  },
+  {
+    "second": 5,
+    "frame_indices": [
+      75,
+      82,
+      90
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper cup from the right side of the table and place it on the left side of the table."
+    }
+  },
+  {
+    "second": 6,
+    "frame_indices": [
+      90,
+      97,
+      105
+    ],
+    "analysis": {
+      "grasp_type": "Intermediate:Unknown",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "VF2: 1 vs 2-3",
+      "description": "Use the right human hand with an Intermediate:Unknown grasp, involving 3 fingers, to pick up the white paper cup from the table and place it on the white paper lid."
+    }
+  },
+  {
+    "second": 7,
+    "frame_indices": [
+      105,
+      112,
+      120
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to place the lid onto the tall white paper cup from the table."
+    }
+  },
+  {
+    "second": 8,
+    "frame_indices": [
+      120,
+      127,
+      135
+    ],
+    "analysis": {
+      "grasp_type": "Intermediate:Lateral",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with an Intermediate:Lateral grasp, involving 2-3 fingers, to pick up the white paper coffee cup from the table and place it on top of another white paper coffee cup."
+    }
+  },
+  {
+    "second": 9,
+    "frame_indices": [
+      135,
+      142,
+      150
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper cup with a lid from the table and place it on the right side of the table."
+    }
+  },
+  {
+    "second": 10,
+    "frame_indices": [
+      150,
+      157,
+      165
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper cup with a lid from the right side of the table and place it on the left side of the table."
+    }
+  },
+  {
+    "second": 11,
+    "frame_indices": [
+      165,
+      172,
+      180
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the tall white paper cup from the table and place it on the right side of the table."
+    }
+  },
+  {
+    "second": 12,
+    "frame_indices": [
+      180,
+      187,
+      195
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the tall white paper cup from the table and place it on top of the other tall white paper cup."
+    }
+  },
+  {
+    "second": 13,
+    "frame_indices": [
+      195,
+      202,
+      210
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper cup with a lid from the table and place it on top of the other white paper cup with a lid."
+    }
+  },
+  {
+    "second": 14,
+    "frame_indices": [
+      210,
+      217,
+      225
+    ],
+    "analysis": {
+      "grasp_type": "Intermediate:Unknown",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with an Intermediate:Unknown grasp, involving 2-3 fingers, to pick up the white paper coffee cup from the table and place it on top of the other white paper coffee cup."
+    }
+  },
+  {
+    "second": 15,
+    "frame_indices": [
+      225,
+      232,
+      240
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper cup from the right side of the table and place it on the left side of the table."
+    }
+  },
+  {
+    "second": 16,
+    "frame_indices": [
+      240,
+      247,
+      255
+    ],
+    "analysis": {
+      "grasp_type": "Precision:Prismatic_2_Finger",
+      "grasp_category": "Precision",
+      "opposition_type": "Pad",
+      "thumb_position": "Abd",
+      "virtual_fingers": "1 vs 2-3",
+      "description": "Use the right human hand with a Precision:Prismatic_2_Finger grasp to pick up the white paper coffee cup from the table and place it on top of the other white paper coffee cup."
+    }
+  },
+  {
+    "second": 17,
+    "frame_indices": [
+      255,
+      262,
+      270
+    ],
+    "analysis": {
+      "grasp_type": "Intermediate:Adduction_Grip",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Add",
+      "virtual_fingers": "VF2: 1 vs 2-3",
+      "description": "Use the right human hand with an Intermediate:Adduction_Grip, involving 3 fingers, to pick up the white paper coffee cup lid from the table and place it on top of the white paper coffee cup."
+    }
+  },
+  {
+    "second": 18,
+    "frame_indices": [
+      270,
+      277,
+      285
+    ],
+    "analysis": {
+      "grasp_type": "Intermediate:Unknown",
+      "grasp_category": "Intermediate",
+      "opposition_type": "Pad",
+      "thumb_position": "Add",
+      "virtual_fingers": "VF2: 1 vs 2-3",
+      "description": "Use the right human hand with an Intermediate:Unknown grasp, involving 3 fingers, to pick up the white paper coffee cup with a lid from the yellow table and place it on the red cloth."
+    }
+  }
+]

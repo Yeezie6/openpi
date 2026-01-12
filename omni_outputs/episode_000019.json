@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Handle",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The thumb and index finger of the left hand grasp the side of the Pringles can, performing a Power:Large Diameter grasp to handle it.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger of the left hand are in contact with the side of the Pringles can, forming a pincer grip. The other fingers are curled around the can, providing additional support."
+}

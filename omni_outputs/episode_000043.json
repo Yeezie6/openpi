@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Handle",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The robot's gripper grasps the Pringles can around its cylindrical body, performing a Power:Large Diameter grasp to handle it.",
+  "palm_contact": false,
+  "contact_details": "The robot's gripper is grasping the Pringles can around its cylindrical body. The gripper appears to be a two-fingered parallel gripper, with one finger on each side of the can. The fingers are positioned roughly in the middle of the can's height."
+}

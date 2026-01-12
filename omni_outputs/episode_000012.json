@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Handle",
+  "grasp_type": "Precision:Pinch",
+  "description": "The thumb and index finger pinch the Pringles can, performing a Precision:Pinch grasp to lift it.",
+  "palm_contact": false,
+  "contact_details": "The thumb and index finger are in contact with the sides of the Pringles can, forming a pincer grip. The middle finger also appears to be in contact with the can, providing additional support."
+}

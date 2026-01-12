@@ -1,0 +1,8 @@
+{
+  "object_name": "spray bottle",
+  "affordance": "Pour",
+  "grasp_type": "Intermediate:Large Diameter",
+  "description": "The index finger and thumb grasp the neck of the spray bottle, while the middle and ring fingers grasp the body, performing an Intermediate:Large Diameter grasp to pour.",
+  "palm_contact": false,
+  "contact_details": "The index finger and thumb are in contact with the neck of the spray bottle, while the middle and ring fingers are in contact with the body of the bottle."
+}

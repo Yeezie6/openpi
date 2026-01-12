@@ -1,0 +1,8 @@
+{
+  "object_name": "spray bottle",
+  "affordance": "Handle",
+  "grasp_type": "Precision:Tripod",
+  "description": "The index finger and thumb grip the neck of the spray bottle, with the middle finger providing additional support, performing a Precision:Tripod grasp.",
+  "palm_contact": false,
+  "contact_details": "The index finger and thumb are gripping the neck of the spray bottle. The middle finger is also in contact with the bottle, providing additional support."
+}

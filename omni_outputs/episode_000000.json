@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Grasp",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The fingertips of the right hand grasp the Pringles can with a Power:Large Diameter grasp, wrapping around its circumference.",
+  "palm_contact": false,
+  "contact_details": "The object is grasped by the fingertips of the right hand, specifically the thumb and index finger, with a cylindrical grasp. The fingers are wrapped around the circumference of the can."
+}

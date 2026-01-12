@@ -1,1 +1,7 @@
-from .omnidex_reasoner import OmniDexReasoner, HandInfo, ObjectInfo, HandObjectInteractionModel, GraspTaxonomyModel, SemanticDescriptionGenerator
+from .omnidex_reasoner import (
+	OmniDexReasoner,
+	InteractionOutput,
+	HandObjectInteractionModel,
+	GraspTaxonomyModel,
+	SemanticDescriptionGenerator,
+)

@@ -1,0 +1,8 @@
+{
+  "object_name": "Pringles can",
+  "affordance": "Grasp",
+  "grasp_type": "Power:Large Diameter",
+  "description": "The robot's right hand performs a Power:Large Diameter grasp on the Pringles can, with the thumb contacting the front and the fingers wrapped around the back for support.",
+  "palm_contact": false,
+  "contact_details": "The robot's right hand is grasping the Pringles can. The thumb is in contact with the front of the can, and the index and middle fingers are wrapped around the back of the can. The ring and pinky fingers are also in contact with the can, providing support."
+}
