@@ -1,0 +1,380 @@
+[
+  {
+    "second": 0,
+    "frame_indices": [
+      0,
+      15,
+      30
+    ],
+    "analysis": {
+      "active_hands": [
+        "left",
+        "right"
+      ],
+      "hands": {
+        "left": {
+          "grasp_type": "Power:Adducted_Thumb",
+          "grasp_category": "Power",
+          "opposition_type": "Pad",
+          "thumb_position": "Add",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        },
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "Use the left hand with an Adducted_Thumb grasp to pick up a white coffee cup and the right hand with a Prismatic_2_Finger grasp to pick up another white coffee cup."
+    }
+  },
+  {
+    "second": 1,
+    "frame_indices": [
+      30,
+      45,
+      60
+    ],
+    "analysis": {
+      "active_hands": [
+        "left",
+        "right"
+      ],
+      "hands": {
+        "left": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        },
+        "right": {
+          "grasp_type": "Precision:Prismatic_4_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3-4-5"
+        }
+      },
+      "description": "Use the left hand with a Prismatic_2_Finger grasp to pick up a white paper cup and place it on the table."
+    }
+  },
+  {
+    "second": 2,
+    "frame_indices": [
+      60,
+      75,
+      90
+    ],
+    "analysis": {
+      "active_hands": [
+        "left",
+        "right"
+      ],
+      "hands": {
+        "left": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        },
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "Use the left and right hands with a Prismatic_2_Finger grasp to pick up and place the lid on a white paper cup."
+    }
+  },
+  {
+    "second": 3,
+    "frame_indices": [
+      90,
+      105,
+      120
+    ],
+    "analysis": {
+      "active_hands": [
+        "left",
+        "right"
+      ],
+      "hands": {
+        "left": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        },
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "Use the left hand with a Prismatic_2_Finger grasp to pick up a lid from a cup and place it on the table."
+    }
+  },
+  {
+    "second": 4,
+    "frame_indices": [
+      120,
+      135,
+      150
+    ],
+    "analysis": {
+      "active_hands": [
+        "left",
+        "right"
+      ],
+      "hands": {
+        "left": {
+          "grasp_type": "Precision:Prismatic_4_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-5"
+        },
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "Use the left hand with a Prismatic_4_Finger grasp to pick up a coffee cup lid and the right hand with a Prismatic_2_Finger grasp to pick up a coffee cup."
+    }
+  },
+  {
+    "second": 5,
+    "frame_indices": [
+      150,
+      165,
+      180
+    ],
+    "analysis": {
+      "active_hands": [
+        "left",
+        "right"
+      ],
+      "hands": {
+        "left": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        },
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "Use the left hand with a Prismatic_2_Finger grasp to place the lid on the cup, while the right hand with a Prismatic_2_Finger grasp is used to pick up another lid."
+    }
+  },
+  {
+    "second": 6,
+    "frame_indices": [
+      180,
+      195,
+      210
+    ],
+    "analysis": {
+      "active_hands": [
+        "left",
+        "right"
+      ],
+      "hands": {
+        "left": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        },
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "Use the left hand with a Prismatic_2_Finger grasp to pick up a white lid and the right hand with a Prismatic_2_Finger grasp to pick up a white cup."
+    }
+  },
+  {
+    "second": 7,
+    "frame_indices": [
+      210,
+      225,
+      240
+    ],
+    "analysis": {
+      "active_hands": [
+        "right"
+      ],
+      "hands": {
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "The right hand uses a Prismatic_2_Finger grasp to place a lid on a paper cup."
+    }
+  },
+  {
+    "second": 8,
+    "frame_indices": [
+      240,
+      255,
+      270
+    ],
+    "analysis": {
+      "active_hands": [
+        "right"
+      ],
+      "hands": {
+        "right": {
+          "grasp_type": "Precision:Prismatic_4_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-5"
+        }
+      },
+      "description": "The right hand uses a Prismatic_4_Finger grasp to place a lid onto a paper cup."
+    }
+  },
+  {
+    "second": 9,
+    "frame_indices": [
+      270,
+      285,
+      300
+    ],
+    "analysis": {
+      "active_hands": [
+        "right"
+      ],
+      "hands": {
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "The right hand uses a Prismatic_2_Finger grasp to pick up a lid from a stack of coffee cups."
+    }
+  },
+  {
+    "second": 10,
+    "frame_indices": [
+      300,
+      315,
+      330
+    ],
+    "analysis": {
+      "active_hands": [
+        "right"
+      ],
+      "hands": {
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "The right hand uses a Prismatic_2_Finger grasp to pick up a lid from the table and place it on a paper cup."
+    }
+  },
+  {
+    "second": 11,
+    "frame_indices": [
+      330,
+      345,
+      360
+    ],
+    "analysis": {
+      "active_hands": [
+        "right"
+      ],
+      "hands": {
+        "right": {
+          "grasp_type": "Precision:Prismatic_4_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-5"
+        }
+      },
+      "description": "The right hand uses a Prismatic_4_Finger grasp with pad opposition and thumb abduction to place a lid onto a white paper cup."
+    }
+  },
+  {
+    "second": 12,
+    "frame_indices": [
+      360,
+      375,
+      390
+    ],
+    "analysis": {
+      "active_hands": [
+        "right"
+      ],
+      "hands": {
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "The right hand uses a Prismatic_2_Finger grasp to pick up a white paper cup and place it on top of another white paper cup."
+    }
+  },
+  {
+    "second": 13,
+    "frame_indices": [
+      390,
+      405,
+      420
+    ],
+    "analysis": {
+      "active_hands": [
+        "right"
+      ],
+      "hands": {
+        "right": {
+          "grasp_type": "Precision:Prismatic_2_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
+          "thumb_position": "Abd",
+          "virtual_fingers": "VF2: 1 vs 2-3"
+        }
+      },
+      "description": "The right hand uses a Prismatic_2_Finger grasp to pick up a white cup."
+    }
+  }
+]

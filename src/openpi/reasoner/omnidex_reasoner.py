@@ -2,12 +2,16 @@ import os
 import argparse
 import base64
 import importlib.util
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 from io import BytesIO
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import json
 import logging
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import functools
+from tqdm import tqdm
 
 try:
     import decord
@@ -34,6 +38,16 @@ logger = logging.getLogger(__name__)
 # Reduce verbosity for HTTP and SDK libraries that log request/response bodies
 for noisy in ("httpx", "httpcore", "openai", "urllib3", "stainless"): 
     logging.getLogger(noisy).setLevel(logging.WARNING)
+
+class TqdmLoggingHandler(logging.Handler):
+    """Logging handler that uses tqdm.write to prevent progress bar corruption."""
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            tqdm.write(msg)
+            self.flush()
+        except Exception:
+            self.handleError(record)
 
 # ==========================================
 # VLM Interface Definition
@@ -212,11 +226,77 @@ class HandObjectInteractionModel:
     def __init__(self, vlm_client: VLMClient):
         self.vlm_client = vlm_client
 
-    def predict(self, video_frames: List[Any]) -> InteractionOutput:
-        system_prompt = """You are an expert in robotic grasping and hand taxonomy. Focus only on the grasp taxonomy signals (Opposition, Thumb posture, Virtual Fingers)."""
-        
+    def detect_active_hands(self, video_frames: List[Any], trace: Optional[List[Dict[str, Any]]] = None) -> List[str]:
+        """
+        Step 1.0: Identify which hands (Left/Right) are actively manipulating objects.
+        """
+        system_prompt = """You are an expert in analyzing hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand.
+The right side of the video frame corresponds to the Right Hand.
+"""
         user_prompt = """
-You are a grasp-attribute annotator. Given a sequence of video frames showing a hand interacting with an object, infer ONLY the following grasp attributes:
+Analyze the video frames and determine which hands are actively manipulating an object.
+Ignore hands that are visible but NOT interacting with any object.
+
+Output a single JSON object with a key "active_hands" containing a list of strings.
+Allowed values in the list: "left", "right".
+
+Examples:
+- If only the right hand is holding/moving an object: {"active_hands": ["right"]}
+- If only the left hand is holding/moving an object: {"active_hands": ["left"]}
+- If both hands are manipulating objects: {"active_hands": ["left", "right"]}
+- If no hands are manipulating: {"active_hands": []}
+"""
+        response_text = self.vlm_client.chat_completion(
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            video_frames=video_frames
+        )
+        
+        parsed_active: List[str] = []
+
+        try:
+            import re
+            m = re.search(r"\{.*\}", response_text, re.DOTALL)
+            if m:
+                data = json.loads(m.group(0))
+                active = data.get("active_hands", [])
+                # Normalize and validate
+                valid = []
+                for h in active:
+                    h_lower = str(h).lower()
+                    if "left" in h_lower:
+                        valid.append("left")
+                    if "right" in h_lower:
+                        valid.append("right")
+                # Remove duplicates and sort
+                parsed_active = sorted(list(set(valid)))
+        except Exception:
+            logger.warning(f"Failed to parse active hands from: {response_text}")
+        
+        # Fallback: assume right hand if uncertain, or return empty?
+        if not parsed_active:
+            parsed_active = ["right"]
+
+        if trace is not None:
+            trace.append({
+                "step": "detect_active_hands",
+                "hand": "both",
+                "frame_count": len(video_frames),
+                "system_prompt": system_prompt,
+                "user_prompt": user_prompt,
+                "raw_response": response_text,
+                "parsed_active_hands": parsed_active,
+            })
+
+        return parsed_active
+
+    def predict(self, video_frames: List[Any], hand_side: str = "right", trace: Optional[List[Dict[str, Any]]] = None) -> InteractionOutput:
+        system_prompt = f"""You are an expert in robotic grasping and hand taxonomy. 
+Focus ONLY on the {hand_side.upper()} HAND (visible on the {hand_side} side of the image) and the grasp taxonomy signals (Opposition, Thumb posture, Virtual Fingers)."""
+        
+        user_prompt = f"""
+You are a grasp-attribute annotator. Given a sequence of video frames showing a hand interacting with an object, infer ONLY the following grasp attributes for the {hand_side.upper()} HAND:
 
 1) Opposition type:
    - Palm: the object is opposed against the palm / palm wrap / containment.
@@ -228,7 +308,7 @@ You are a grasp-attribute annotator. Given a sequence of video frames showing a 
    - Add: thumb adducted/closer to palm (thumb tucked in, small thumb-index spread).
 
 3) Virtual fingers (VF):
-   - Identify which digits are effectively acting together as “virtual fingers” in contact/force production.
+   - Identify which digits of the {hand_side.upper()} HAND are effectively acting together.
    - Use digit IDs: 1=thumb, 2=index, 3=middle, 4=ring, 5=little.
    - Output format examples:
      - "VF2: 1 vs 2-5"
@@ -247,11 +327,11 @@ Uncertainty rules:
 
 Output rules (STRICT):
 - Output ONE valid JSON object ONLY (no extra text, no markdown), with ALL keys present:
-{
+{{
   "opposition_type": "Palm|Pad|Side|Unknown",
   "thumb_position": "Abd|Add|Unknown",
   "virtual_fingers": "<text description or Unknown>"
-}
+}}
 """
 
 
@@ -273,12 +353,23 @@ Output rules (STRICT):
             if m:
                 json_text = m.group(0)
                 data = json.loads(json_text)
-                return InteractionOutput(
+                out = InteractionOutput(
                     opposition_type=data.get("opposition_type", "Unknown"),
                     thumb_position=data.get("thumb_position", "Unknown"),
                     virtual_fingers=data.get("virtual_fingers", "Unknown"),
                     raw_response=response_text,
                 )
+                if trace is not None:
+                    trace.append({
+                        "step": "interaction_model",
+                        "hand": hand_side,
+                        "frame_count": len(video_frames),
+                        "system_prompt": system_prompt,
+                        "user_prompt": user_prompt,
+                        "raw_response": response_text,
+                        "parsed": asdict(out),
+                    })
+                return out
 
             # Fallback: attempt to read simple key: value patterns
             def _extract_kv(key_name: str) -> Optional[str]:
@@ -299,27 +390,60 @@ Output rules (STRICT):
             virtual_fingers = _extract_kv('virtual_fingers') or 'Unknown'
             if opposition_type == 'Unknown' and thumb_position == 'Unknown' and virtual_fingers == 'Unknown':
                 logger.error("Failed to parse VLM response as JSON or key-value pairs.")
-                return InteractionOutput(
+                out = InteractionOutput(
                     opposition_type="Error",
                     thumb_position="Error",
                     virtual_fingers="Error",
                     raw_response=response_text,
                 )
+                if trace is not None:
+                    trace.append({
+                        "step": "interaction_model",
+                        "hand": hand_side,
+                        "frame_count": len(video_frames),
+                        "system_prompt": system_prompt,
+                        "user_prompt": user_prompt,
+                        "raw_response": response_text,
+                        "parsed": asdict(out),
+                    })
+                return out
 
-            return InteractionOutput(
+            out = InteractionOutput(
                 opposition_type=opposition_type,
                 thumb_position=thumb_position,
                 virtual_fingers=virtual_fingers,
                 raw_response=response_text,
             )
+            if trace is not None:
+                trace.append({
+                    "step": "interaction_model",
+                    "hand": hand_side,
+                    "frame_count": len(video_frames),
+                    "system_prompt": system_prompt,
+                    "user_prompt": user_prompt,
+                    "raw_response": response_text,
+                    "parsed": asdict(out),
+                })
+            return out
         except Exception as e:
             logger.exception("Unhandled exception while parsing VLM response")
-            return InteractionOutput(
+            out = InteractionOutput(
                 opposition_type="Error",
                 thumb_position="Error",
                 virtual_fingers="Error",
                 raw_response=response_text,
             )
+            if trace is not None:
+                trace.append({
+                    "step": "interaction_model",
+                    "hand": hand_side,
+                    "frame_count": len(video_frames),
+                    "system_prompt": system_prompt,
+                    "user_prompt": user_prompt,
+                    "raw_response": response_text,
+                    "parsed": asdict(out),
+                })
+            return out
 
 
 class GraspTaxonomyModel:
@@ -341,7 +465,7 @@ class GraspTaxonomyModel:
             )
         return "\n".join(blocks)
 
-    def predict(self, video_frames: List[Any], interaction_context: InteractionOutput, trace: bool = False) -> str:
+    def predict(self, video_frames: List[Any], interaction_context: InteractionOutput, trace: bool = False, trace_log: Optional[List[Dict[str, Any]]] = None) -> str:
         system_prompt = """You are an expert in Grasp Taxonomy. 
 Use the provided knowledge snippets to classify the grasp type.
 Return the final grasp as Coarse:Fine."""
@@ -427,6 +551,7 @@ Return the final grasp as Coarse:Fine."""
             return None
 
         parsed = _extract(normalized_candidate) or _extract(normalized_full)
+        final_result: str
 
         if parsed:
             # Validate and map parsed result to allowed labels only
@@ -454,23 +579,44 @@ Return the final grasp as Coarse:Fine."""
                 fines_for_coarse = allowed_map.get(coarse, [])
                 # Exact accept
                 if fine in fines_for_coarse:
-                    return f"{coarse}:{fine}"
-                # Fuzzy match fine label to known fines
-                close = difflib.get_close_matches(fine, fines_for_coarse, n=1, cutoff=0.6) if fines_for_coarse else []
-                if close:
-                    return f"{coarse}:{close[0]}"
-                # If fine unknown, return coarse:Unknown to avoid invented labels
-                return f"{coarse}:Unknown"
+                    final_result = f"{coarse}:{fine}"
+                else:
+                    # Fuzzy match fine label to known fines
+                    close = difflib.get_close_matches(fine, fines_for_coarse, n=1, cutoff=0.6) if fines_for_coarse else []
+                    if close:
+                        final_result = f"{coarse}:{close[0]}"
+                    else:
+                        # If fine unknown, return coarse:Unknown to avoid invented labels
+                        final_result = f"{coarse}:Unknown"
             except Exception:
                 logger.exception("Error validating parsed grasp_type")
-                return parsed
+                final_result = parsed
+        else:
+            cleaned = re.sub(r"^[^A-Za-z0-9]+", "", normalized_candidate)
+            if ":" in cleaned:
+                final_result = cleaned
+            else:
+                logger.warning(f"Unexpected grasp_type format. Response: {response_text}")
+                final_result = "Error: Invalid Format"
 
-        cleaned = re.sub(r"^[^A-Za-z0-9]+", "", normalized_candidate)
-        if ":" in cleaned:
-            return cleaned
+        if trace_log is not None:
+            try:
+                trace_log.append({
+                    "step": "taxonomy_model",
+                    "frame_count": len(video_frames),
+                    "interaction_context": asdict(interaction_context),
+                    "system_prompt": system_prompt,
+                    "user_prompt": user_prompt,
+                    "knowledge_context": knowledge_ctx,
+                    "allowed_labels": allowed,
+                    "raw_response": response_text,
+                    "parsed_grasp": parsed,
+                    "final_grasp": final_result,
+                })
+            except Exception:
+                logger.exception("Failed to record taxonomy trace")
 
-        logger.warning(f"Unexpected grasp_type format. Response: {response_text}")
-        return "Error: Invalid Format"
+        return final_result
 
 
 class SemanticDescriptionGenerator:
@@ -485,36 +631,45 @@ class SemanticDescriptionGenerator:
     def generate(
         self,
         video_frames: List[Any],
-        interaction_context: InteractionOutput,
-        grasp_type: str,
+        hands_data: Dict[str, Any],
+        trace: Optional[List[Dict[str, Any]]] = None,
     ) -> str:
         system_prompt = """You are a video annotation AI specialized in identifying high-level manipulation tasks performed by human hands in first-person videos with a series of grasp information."""
-
-        # Extract only the fine part of the grasp type if present
-        fine_grasp_type = grasp_type.split(":", 1)[1] if ":" in grasp_type else grasp_type
+        
+        # Build context string based on hands_data
+        context_str = ""
+        active_hands = sorted(hands_data.keys())
+        
+        for side in active_hands:
+            info = hands_data[side]
+            interaction = info['interaction']
+            grasp_type = info['grasp_type']
+            fine_grasp = grasp_type.split(":", 1)[1] if ":" in grasp_type else grasp_type
+            
+            context_str += f"\n[{side.upper()} HAND Info]:\n"
+            context_str += f"- Grasp Taxonomy: {fine_grasp}\n"
+            context_str += f"- Opposition: {interaction.opposition_type}\n"
+            context_str += f"- Thumb Position: {interaction.thumb_position}\n"
+            context_str += f"- Virtual Fingers: {interaction.virtual_fingers}\n"
 
         user_prompt = f"""
-Input Context (Inferred Grasp Attributes):
-- Grasp Taxonomy: {fine_grasp_type}
-- Opposition: {interaction_context.opposition_type}
-- Thumb Position: {interaction_context.thumb_position}
-- Virtual Fingers: {interaction_context.virtual_fingers}
+Input Context (Inferred Grasp Attributes for Active Hands):
+{context_str}
 
 Task:
-Generate a single-sentence task description that summarizes the main manipulation task performed by the human hand in the video.
+Generate a single-sentence task description that summarizes the main manipulation task performed in the video.
 
 The task description MUST include:
-- The grasp taxonomy used by the human hand (specifically the inferred "{fine_grasp_type}").
-- The number of fingers in contact (infer from "{interaction_context.virtual_fingers}" or visual evidence).
-- The name of the manipulated object, including at least one distinctive feature to disambiguate it.
-- The pick-and-place action, explicitly stating the start location and the target location.
-- Explicitly specify whether the left or right human hand is used.
+1. The objects being manipulated, including distinctive features.
+2. The specific actions (e.g., pick, place, pour, open) with start/end locations if applicable.
+3. Mention specific hands ({' and '.join(active_hands)}) and their grasp types (from context).
 
 Guidelines:
-- Use one sentence only.
-- Use imperative style (e.g., "Use the right human hand to...").
-- Assume the manipulator is a real, physical human hand.
-- Do not describe robotic anatomy (e.g., actuators, sensors).
+- If only one hand is active, describe its action clearly.
+- If TWO hands are active, describe how they coordinate or what each is doing.
+- Use imperative style (e.g., "Use the right hand to... and the left hand to...").
+- Assume real human hands.
+- One sentence only.
 
 Output format:
 Return plain text only. Do not include explanations or JSON.
@@ -525,6 +680,26 @@ Return plain text only. Do not include explanations or JSON.
             user_prompt=user_prompt,
             video_frames=video_frames
         )
+        if trace is not None:
+            hands_context = {}
+            for side_key, info in hands_data.items():
+                interaction_obj = info.get("interaction")
+                interaction_payload = asdict(interaction_obj) if hasattr(interaction_obj, "__dataclass_fields__") else interaction_obj
+                hands_context[side_key] = {
+                    "grasp_type": info.get("grasp_type"),
+                    "grasp_category": info.get("grasp_category"),
+                    "interaction": interaction_payload,
+                }
+
+            trace.append({
+                "step": "description_generator",
+                "frame_count": len(video_frames),
+                "system_prompt": system_prompt,
+                "user_prompt": user_prompt,
+                "raw_response": response_text,
+                "active_hands": active_hands,
+                "hands_context": hands_context,
+            })
 
         return response_text
 
@@ -553,40 +728,65 @@ class OmniDexReasoner:
             Dictionary containing the inferred semantics and final description.
         """
         
-        # 1. Understand Interaction (VLM Call 1)
-        # Infers grasp taxonomy attributes from video
-        interaction_result = self.interaction_model.predict(video_frames)
+        trace_log: List[Dict[str, Any]] = []
+
+        # 1.0 Detect Active Hands
+        active_hands = self.interaction_model.detect_active_hands(video_frames, trace=trace_log)
         if self.trace:
-            logger.info("[Interaction] frames=%d -> opp=%s, thumb=%s, vf=%s", len(video_frames), interaction_result.opposition_type, interaction_result.thumb_position, interaction_result.virtual_fingers)
+            logger.info(f"[Detect] Active hands: {active_hands}")
         
-        # 2. Reason about Grasp Taxonomy (VLM Call 2)
-        # Uses video + interaction context to classify grasp
-        grasp_type = self.taxonomy_model.predict(video_frames, interaction_result, trace=self.trace)
+        hands_results = {}
         
-        # Extract coarse category from grasp_type if possible
-        if ":" in grasp_type:
-            computed_grasp_category = grasp_type.split(":", 1)[0]
-        else:
-            computed_grasp_category = "Unknown"
+        # If no active hands detected, fallback to right hand processing or return empty?
+        # Let's fallback to 'right' to handle cases where detection fails but action exists.
+        if not active_hands:
+            active_hands = ["right"]
+
+        for side in active_hands:
+            # 1. Understand Interaction (VLM Call)
+            interaction_result = self.interaction_model.predict(video_frames, side, trace=trace_log)
+            
+            # 2. Reason about Grasp Taxonomy (VLM Call)
+            grasp_type = self.taxonomy_model.predict(video_frames, interaction_result, trace=self.trace, trace_log=trace_log)
+            
+            # Extract coarse category
+            if ":" in grasp_type:
+                coarse = grasp_type.split(":", 1)[0]
+            else:
+                coarse = "Unknown"
+                
+            hands_results[side] = {
+                "interaction": interaction_result,
+                "grasp_type": grasp_type,
+                "grasp_category": coarse
+            }
 
         # 3. Generate Semantic Description (VLM Call 3)
-        # Synthesizes all info into a natural language description
         description = self.description_generator.generate(
             video_frames, 
-            interaction_result, 
-            grasp_type
+            hands_results,
+            trace=trace_log
         )
+        
         if self.trace:
-            logger.info("[Taxonomy] grasp_type=%s", grasp_type)
             logger.info("[Description] %s", description)
         
+        # Transform hands_results to JSON-serializable dict
+        serializable_hands = {}
+        for side, data in hands_results.items():
+            serializable_hands[side] = {
+                "grasp_type": data["grasp_type"],
+                "grasp_category": data["grasp_category"],
+                "opposition_type": data["interaction"].opposition_type,
+                "thumb_position": data["interaction"].thumb_position,
+                "virtual_fingers": data["interaction"].virtual_fingers,
+            }
+
         return {
-            "grasp_type": grasp_type,
-            "grasp_category": computed_grasp_category,
-            "opposition_type": interaction_result.opposition_type,
-            "thumb_position": interaction_result.thumb_position,
-            "virtual_fingers": interaction_result.virtual_fingers,
+            "active_hands": active_hands,
+            "hands": serializable_hands,
             "description": description,
+            "trace_log": trace_log,
         }
 
 
@@ -614,7 +814,7 @@ def _extract_frames_from_video(
             "Install with: pip install decord pillow"
         )
 
-    vr = decord.VideoReader(video_path)
+    vr = decord.VideoReader(video_path, ctx=decord.cpu(0), num_threads=1)
     local_fps = vr.get_avg_fps()
     if local_fps <= 0:
         local_fps = 20
@@ -651,58 +851,86 @@ def _resolve_video_from_dir(video_dir: str) -> str:
 def _process_video_sequential(
     reasoner: OmniDexReasoner,
     video_path: str,
-    out_dir: str
+    out_dir: str,
+    max_workers: int = 4
 ) -> None:
     if decord is None or Image is None:
         raise RuntimeError("Sequential processing requires `decord` and `Pillow`.")
 
-    vr = decord.VideoReader(video_path)
-    total_frames = len(vr)
-    logger.info(f"Processing {video_path}: {total_frames} frames found.")
+    try:
+        vr = decord.VideoReader(video_path, ctx=decord.cpu(0), num_threads=1)
+    except Exception as e:
+        logger.error(f"Failed to open video {video_path}: {e}")
+        return
 
-    # User requirement: Process all videos regardless of length.
-    # Logic: local_fps = 30.
-    # For each 'second' (30 frames), take frame 0 (0s), 15 (0.5s), 30 (1s).
-    
+    total_frames = len(vr)
+    logger.info(f"Processing {video_path}: {total_frames} frames found. Parallel segments: {max_workers}")
+
     local_fps = 30
-    results = []
     
-    # Iterate through "seconds" defined by the 30-frame stride
-    # A segment requires access to frame `base_idx + 30`.
-    
+    # Pre-calculate all segment indices
+    tasks = []
     current_sec = 0
     while True:
         base_idx = current_sec * local_fps
         idx_0 = base_idx
-        idx_mid = base_idx + 15 # +15 (0.5s)
-        idx_end = base_idx + 30 # +30 (1.0s)
+        idx_mid = base_idx + 15
+        idx_end = base_idx + 30
         
-        # Check boundary
         if idx_end >= total_frames:
+            # Check edge case: if we have enough frames for a partial second?
+            # Original code breaks here.
             break
             
         frame_indices = [idx_0, idx_mid, idx_end]
-        
-        try:
-            frames_arr = vr.get_batch(frame_indices).asnumpy()
-            pil_frames = [Image.fromarray(f) for f in frames_arr]
-            
-            # Run reasoning
-            out = reasoner.reason(pil_frames)
-            
-            results.append({
-                "second": current_sec,
-                "frame_indices": frame_indices,
-                "analysis": out
-            })
-            logger.info(f"  Analyzed second {current_sec} (Frames {frame_indices})")
-        except Exception as e:
-            logger.error(f"Error processing second {current_sec} for {video_path}: {e}")
-        
+        tasks.append((current_sec, frame_indices))
         current_sec += 1
 
+    if not tasks:
+        logger.warning(f"No valid segments for {video_path}")
+        return
+
+    results = []
+    vr_lock = threading.Lock()
+
+    def _process_segment(sec: int, indices: List[int]) -> Optional[Dict]:
+        try:
+            # decord.VideoReader is not thread-safe for concurrent get_batch calls
+            # on the same instance. Use a lock to protect the read.
+            with vr_lock:
+                frames_arr = vr.get_batch(indices).asnumpy()
+            
+            pil_frames = [Image.fromarray(f) for f in frames_arr]
+            
+            out = reasoner.reason(pil_frames)
+            
+            logger.info(f"  [Video {Path(video_path).name}] Analyzed sec {sec}")
+            return {
+                "second": sec,
+                "frame_indices": indices,
+                "analysis": out
+            }
+        except Exception as e:
+            logger.error(f"Error processing second {sec} for {video_path}: {e}")
+            return None
+
+    # Execute efficiently
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_map = {executor.submit(_process_segment, t[0], t[1]): t[0] for t in tasks}
+        
+        # Add tqdm for progress tracking across segments
+        with tqdm(total=len(tasks), desc=f"Analyzing segments: {Path(video_path).name}", leave=False, dynamic_ncols=True) as pbar:
+            for future in as_completed(future_map):
+                res = future.result()
+                if res:
+                    results.append(res)
+                pbar.update(1)
+    
+    # Sort results by second
+    results.sort(key=lambda x: x["second"])
+
     if not results:
-        logger.warning(f"No results generated for {video_path} (perhaps too short < 31 frames?)")
+        logger.warning(f"No results generated for {video_path}")
         return
 
     # Save results
@@ -713,6 +941,20 @@ def _process_video_sequential(
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     logger.info(f"Saved sequential analysis to {out_path}")
+
+    # Save segment-level trace logs separately
+    trace_entries = [
+        {
+            "second": r.get("second"),
+            "frame_indices": r.get("frame_indices"),
+            "trace_log": r.get("analysis", {}).get("trace_log", []),
+        }
+        for r in results
+    ]
+    trace_path = Path(out_dir) / f"{stem}_sequential_trace.json"
+    with open(trace_path, "w", encoding="utf-8") as f:
+        json.dump(trace_entries, f, indent=2, ensure_ascii=False)
+    logger.info(f"Saved sequential trace log to {trace_path}")
 
 
 def main() -> None:
@@ -781,6 +1023,18 @@ def main() -> None:
         default=None,
         help="Path to a log file to write runtime logs (uses rotating handler).",
     )
+    parser.add_argument(
+        "--batch-workers",
+        type=int,
+        default=1,
+        help="Number of parallel videos to process in batch mode.",
+    )
+    parser.add_argument(
+        "--seg-workers",
+        type=int,
+        default=4,
+        help="Number of parallel segments to process per video (sequential mode).",
+    )
     args = parser.parse_args()
 
     # Configure file logging if requested
@@ -806,6 +1060,16 @@ def main() -> None:
     if args.trace:
         logging.getLogger().setLevel(logging.DEBUG)
 
+    # Replace default handler with TqdmLoggingHandler for cleaner progress bars
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+    th = TqdmLoggingHandler()
+    th.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logging.root.addHandler(th)
+
+    # Initialize Reasoner (will be shared across threads if thread-safe, or instantiated per thread if needed)
+    # Since VLMClient uses openai client which is thread safe, sharing reasoner is fine.
+    # However, for maximum safety if reasoner has state (it doesn't seem to have per-call state that persists), we share it.
     reasoner = OmniDexReasoner(trace=args.trace)
 
     def _process_and_save(frames: List[Any], name: str, out_dir: str):
@@ -817,8 +1081,26 @@ def main() -> None:
             with open(out_path / file_name, "w", encoding="utf-8") as f:
                 json.dump(res, f, ensure_ascii=False, indent=2)
             logger.info(f"Wrote output for {name} -> {out_path / file_name}")
+
+            # Persist trace log separately for easier inspection
+            trace_data = res.get("trace_log", [])
+            trace_name = f"{name}_trace.json"
+            with open(out_path / trace_name, "w", encoding="utf-8") as f:
+                json.dump(trace_data, f, ensure_ascii=False, indent=2)
+            logger.info(f"Wrote trace log for {name} -> {out_path / trace_name}")
         except Exception:
             logger.exception(f"Failed processing {name}")
+
+    # Helper for batch video processing
+    def process_single_video(vid_path: Path):
+        try:
+            if args.sequential:
+                 _process_video_sequential(reasoner, str(vid_path), args.out_dir, max_workers=args.seg_workers)
+            else:
+                 frames = _extract_frames_from_video(str(vid_path), extract_fps=args.extract_fps, max_frames=args.max_frames)
+                 _process_and_save(frames, vid_path.stem, args.out_dir)
+        except Exception:
+            logger.exception(f"Failed to process video {vid_path}")
 
     # Batch mode: process multiple video files under --batch-dir
     if args.batch_dir:
@@ -833,23 +1115,28 @@ def main() -> None:
             files = sorted(base.glob(pattern2))
         if not files:
             logger.warning(f"No video files found in {args.batch_dir}")
-        for vid in files:
-            try:
-                if args.sequential:
-                     _process_video_sequential(reasoner, str(vid), args.out_dir)
-                else:
-                     frames = _extract_frames_from_video(str(vid), extract_fps=args.extract_fps, max_frames=args.max_frames)
-                     _process_and_save(frames, vid.stem, args.out_dir)
-            except Exception:
-                logger.exception(f"Failed to extract frames from {vid}, skipping")
-                continue
+            return
+            
+        logger.info(f"Found {len(files)} videos. Processing with {args.batch_workers} workers.")
+        
+        with ThreadPoolExecutor(max_workers=args.batch_workers) as executor:
+            # Wrap files in tqdm for video-level progress
+            futures = {executor.submit(process_single_video, vid): vid for vid in files}
+            with tqdm(total=len(files), desc="Overall Progress", dynamic_ncols=True) as pbar:
+                for f in as_completed(futures):
+                    try:
+                        f.result()
+                    except Exception as e:
+                        vid = futures[f]
+                        logger.error(f"Batch worker error on {vid}: {e}")
+                    pbar.update(1)
         return
 
     # Single source modes
     video_frames: List[Any] = []
     if args.video_path:
         if args.sequential:
-             _process_video_sequential(reasoner, args.video_path, args.out_dir)
+             _process_video_sequential(reasoner, args.video_path, args.out_dir, max_workers=args.seg_workers)
         else:
              video_frames = _extract_frames_from_video(
                 args.video_path,
@@ -860,7 +1147,7 @@ def main() -> None:
     elif args.video_dir:
         resolved_path = _resolve_video_from_dir(args.video_dir)
         if args.sequential:
-             _process_video_sequential(reasoner, resolved_path, args.out_dir)
+             _process_video_sequential(reasoner, resolved_path, args.out_dir, max_workers=args.seg_workers)
         else:
             video_frames = _extract_frames_from_video(
                 resolved_path,
