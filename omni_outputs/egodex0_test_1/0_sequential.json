@@ -14,12 +14,14 @@
         "right": {
           "grasp_type": "Power:Large_Diameter",
           "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         }
       },
-      "description": "Use the right hand with a large diameter grasp to pick up the rim of a paper cup."
+      "description": "Use the right hand with a large diameter grasp to pick up a paper cup from the table."
     }
   },
   {
@@ -35,14 +37,16 @@
       ],
       "hands": {
         "right": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Intermediate:Lateral",
+          "grasp_category": "Intermediate",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         }
       },
-      "description": "Use the right hand with a large diameter grasp to pick up the rim of a paper cup and place its lid on top."
+      "description": "Use the right hand with a lateral grasp to pick up the rim of a paper cup and place its lid on top."
     }
   },
   {
@@ -60,9 +64,11 @@
         "right": {
           "grasp_type": "Power:Large_Diameter",
           "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         }
       },
       "description": "Use the right hand with a large diameter grasp to place the lid onto the rim of a white paper cup."
@@ -82,21 +88,25 @@
       ],
       "hands": {
         "left": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Precision_Sphere",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         },
         "right": {
-          "grasp_type": "Power:Adducted_Thumb",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Precision_Sphere",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-3-4-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         }
       },
-      "description": "Use the left hand with a large diameter grasp to pick up the rim of a paper cup and use the right hand with an adducted thumb grasp to place a lid onto the cup."
+      "description": "Use the left hand with a precision sphere grasp to pick up the rim of a paper cup and use the right hand with a precision sphere grasp to place a lid onto the cup."
     }
   },
   {
@@ -113,21 +123,25 @@
       ],
       "hands": {
         "left": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Precision_Sphere",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         },
         "right": {
-          "grasp_type": "Power:Palmar",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Inferior_Pincer",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-3-4-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "rim"
         }
       },
-      "description": "Use the left hand with a large diameter grasp to hold the body of a paper cup and the right hand with a palmar grasp to place the lid onto the cup."
+      "description": "Use the left hand with a precision sphere grasp to hold the rim of a paper cup and use the right hand with an inferior pincer grasp to place a lid onto the cup."
     }
   },
   {
@@ -144,21 +158,25 @@
       ],
       "hands": {
         "left": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Precision_Sphere",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         },
         "right": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Precision_Sphere",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         }
       },
-      "description": "Use the left hand with a large diameter grasp to pick up the base of a white cup and use the right hand with a large diameter grasp to pick up the lid of another white cup."
+      "description": "Use the left hand with a precision sphere grasp to pick up the base of a white cup and use the right hand with a precision sphere grasp to pick up the lid of another white cup."
     }
   },
   {
@@ -175,21 +193,25 @@
       ],
       "hands": {
         "left": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Prismatic_4_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         },
         "right": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Prismatic_4_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF1: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         }
       },
-      "description": "Use the left hand with a large diameter grasp to hold the base of a paper cup and the right hand with a large diameter grasp to place the lid on the cup."
+      "description": "Use the left hand with a prismatic 4 finger grasp to hold the base of a white paper cup and use the right hand with a prismatic 4 finger grasp to place the lid onto the cup."
     }
   },
   {
@@ -206,21 +228,25 @@
       ],
       "hands": {
         "left": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Intermediate:Lateral",
+          "grasp_category": "Intermediate",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         },
         "right": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Inferior_Pincer",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         }
       },
-      "description": "Use the left hand with a large diameter grasp to pick up the rim of a white paper cup and place it on the table, while the right hand with a large diameter grasp steadies the cup's body."
+      "description": "Use the left hand with a lateral grasp to pick up the lid of a white cup and use the right hand with an inferior pincer grasp to pick up the white cup."
     }
   },
   {
@@ -237,21 +263,25 @@
       ],
       "hands": {
         "left": {
-          "grasp_type": "Power:Adducted_Thumb",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Prismatic_4_Finger",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-3-4-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         },
         "right": {
-          "grasp_type": "Power:Large_Diameter",
-          "grasp_category": "Power",
-          "opposition_type": "Palm",
+          "grasp_type": "Precision:Precision_Sphere",
+          "grasp_category": "Precision",
+          "opposition_type": "Pad",
           "thumb_position": "Abd",
-          "virtual_fingers": "VF2: 1 vs 2-5"
+          "virtual_fingers": "1 vs 2-3",
+          "object_shape": "Cylinder",
+          "contact_region": "sidewall"
         }
       },
-      "description": "Use the left hand with an adducted thumb grasp to pick up the rim of a white paper cup and use the right hand with a large diameter grasp to place a lid on the cup."
+      "description": "Use the left hand with a prismatic 4 finger grasp to pick up the rim of a white paper cup and use the right hand with a precision sphere grasp to place the lid onto the cup."
     }
   }
 ]

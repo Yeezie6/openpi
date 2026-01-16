@@ -2,11 +2,19 @@ import os
 import argparse
 import base64
 import importlib.util
+import re
+import json
 from dataclasses import dataclass, asdict
 from io import BytesIO
 from pathlib import Path
 from typing import List, Dict, Any, Optional
-from .grasp_knowledge_base import GraspKnowledgeBase
+try:
+    from .grasp_knowledge_base import GraspKnowledgeBase
+except (ImportError, ValueError):
+    import sys
+    from pathlib import Path
+    sys.path.append(str(Path(__file__).parent))
+    from grasp_knowledge_base import GraspKnowledgeBase
 import json
 import logging
 import threading
@@ -147,7 +155,9 @@ class InteractionOutput:
     opposition_type: str  # Opposition: Palm | Pad | Side
     thumb_position: str  # Thumb position: Abd | Add
     virtual_fingers: str  # Virtual finger grouping text description
-    raw_response: str
+    object_shape: str = "Unknown" # Object shape
+    contact_region: str = "Unknown" # Contact region
+    raw_response: str = ""
 
 # ==========================================
 # OmniDexReasoner Modules (Video-Based)
@@ -185,7 +195,6 @@ RULES:
         
         parsed_active: List[str] = []
         try:
-            import re
             m = re.search(r"\{.*\}", response_text, re.DOTALL)
             if m:
                 data = json.loads(m.group(0))
@@ -217,25 +226,67 @@ RULES:
         return parsed_active
 
     def predict(self, video_frames: List[Any], hand_side: str = "right", debug: Optional[Dict[str, Any]] = None) -> InteractionOutput:
-        system_prompt = f"""You are an expert in human grasping and grasp taxonomy. 
+        shapes = [
+            'Cavity', 'Cuboid', 'Cylinder', 'Edge', 'Ellipsoid', 'Handle', 
+            'Hole', 'Knob', 'Plate', 'Prismatic', 'Pull-Tab', 'Rim', 'Ring', 
+            'Ring-Plate', 'Sheet', 'Small Ball-like Object', 'Small Feature', 
+            'Sphere', 'Tab', 'Tapered Cylinder', 'Torus'
+        ]
+        contact_regions = ['edge', 'rim', 'sidewall', 'surface']
+
+        system_prompt = f"""You are an expert in human grasping and grasp taxonomy.
 Focus ONLY on the {hand_side.upper()} HAND (visible on the {hand_side} side of the image).
 
 TASK:
 Infer the following attributes for the {hand_side.upper()} HAND:
-1) Opposition type: Palm (wrap/containment), Pad (fingertips), Side (lateral pinch).
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
 2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
 3) Virtual fingers (VF): Identify digits acting together (1=thumb, 2=index, 3=middle, 4=ring, 5=little). Format: "VF2: 1 vs 2-5".
+4) Object Shape: Select the best fit from: {', '.join(shapes)}
+5) Contact Region: Select the best fit from: {', '.join(contact_regions)}
 
 INSTRUCTIONS:
-- Chain of Thought: Integrate evidence across frames internally. Prefer the dominant/stable grasp.
-- Uncertainty: Use "Unknown" if evidence is occluded or contradictory.
-- Output Format: ONE valid JSON object ONLY:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Identify which digits are in contact and act together as functional groups.
+- Use the compact range form: "2-3-4-5" MUST be written as "2-5".
+- Avoid illegal formats like "VF2: 1 vs 2-3-4-5".
+
+Object Shape + Contact Region:
+- Pick exactly one from the provided lists.
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
 {{
   "opposition_type": "Palm|Pad|Side|Unknown",
   "thumb_position": "Abd|Add|Unknown",
-  "virtual_fingers": "string"
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
 }}
 """
+
         user_prompt = f"Analyze the {hand_side.upper()} HAND in the provided video frames."
 
 
@@ -259,7 +310,6 @@ INSTRUCTIONS:
         
         try:
             # Try to robustly extract a JSON object from the response using regex.
-            import re
 
             m = re.search(r"\{.*\}", response_text, re.DOTALL)
 
@@ -270,6 +320,8 @@ INSTRUCTIONS:
                     opposition_type=data.get("opposition_type", "Unknown"),
                     thumb_position=data.get("thumb_position", "Unknown"),
                     virtual_fingers=data.get("virtual_fingers", "Unknown"),
+                    object_shape=data.get("object_shape", "Unknown"),
+                    contact_region=data.get("contact_region", "Unknown"),
                     raw_response=response_text,
                 )
                 if debug is not None:
@@ -293,12 +345,17 @@ INSTRUCTIONS:
             opposition_type = _extract_kv('opposition_type') or 'Unknown'
             thumb_position = _extract_kv('thumb_position') or 'Unknown'
             virtual_fingers = _extract_kv('virtual_fingers') or 'Unknown'
+            object_shape = _extract_kv('object_shape') or 'Unknown'
+            contact_region = _extract_kv('contact_region') or 'Unknown'
+
             if opposition_type == 'Unknown' and thumb_position == 'Unknown' and virtual_fingers == 'Unknown':
                 logger.error("Failed to parse VLM response as JSON or key-value pairs.")
                 parsed_output = InteractionOutput(
                     opposition_type="Error",
                     thumb_position="Error",
                     virtual_fingers="Error",
+                    object_shape="Error",
+                    contact_region="Error",
                     raw_response=response_text,
                 )
                 if debug is not None:
@@ -309,6 +366,8 @@ INSTRUCTIONS:
                 opposition_type=opposition_type,
                 thumb_position=thumb_position,
                 virtual_fingers=virtual_fingers,
+                object_shape=object_shape,
+                contact_region=contact_region,
                 raw_response=response_text,
             )
             if debug is not None:
@@ -320,6 +379,8 @@ INSTRUCTIONS:
                 opposition_type="Error",
                 thumb_position="Error",
                 virtual_fingers="Error",
+                object_shape="Error",
+                contact_region="Error",
                 raw_response=response_text,
             )
             if debug is not None:
@@ -342,13 +403,13 @@ class GraspTaxonomyModel:
         blocks = []
         for h in hits:
             blocks.append(
-                f"- Label: {h.get('name')}\n  Coarse Type: {h.get('coarse')}\n  Fine Type: {h.get('fine')}\n  Opposition: {h.get('opposition')}\n  Thumb: {h.get('thumb')}\n  Virtual Fingers: {h.get('virtual_fingers')}"
+                f"- Label: {h.name}\n  Coarse Type: {h.coarse}\n  Fine Type: {h.fine}\n  Opposition: {h.opposition}\n  Thumb: {h.thumb}\n  Virtual Fingers (VF2): {h.vf2}\n  Object Shape: {h.object_shape}\n  Contact Region: {h.contact_region}"
             )
         return "\n".join(blocks)
 
     def predict(self, video_frames: List[Any], interaction_context: InteractionOutput, trace: bool = False, debug: Optional[Dict[str, Any]] = None) -> str:
         # Build allowed labels from the small knowledge base
-        allowed = [e.get('name') for e in self.knowledge_base.entries if e.get('name')]
+        allowed = [e.name for e in self.knowledge_base.entries if getattr(e, "name", None)]
         allowed_list_text = ', '.join(allowed)
 
         system_prompt = f"""You are an expert in Grasp Taxonomy. 
@@ -364,7 +425,9 @@ RULES:
         query_text = (
             f"Opposition: {interaction_context.opposition_type}\n"
             f"Thumb Position: {interaction_context.thumb_position}\n"
-            f"Virtual Fingers: {interaction_context.virtual_fingers}"
+            f"Virtual Fingers: {interaction_context.virtual_fingers}\n"
+            f"Object Shape: {interaction_context.object_shape}\n"
+            f"Contact Region: {interaction_context.contact_region}"
         )
         knowledge_ctx = self._build_knowledge_context(query_text)
 
@@ -372,6 +435,8 @@ RULES:
 - Opposition Type: {interaction_context.opposition_type}
 - Thumb Position: {interaction_context.thumb_position}
 - Virtual Fingers: {interaction_context.virtual_fingers}
+- Object Shape: {interaction_context.object_shape}
+- Contact Region: {interaction_context.contact_region}
 
 Reference Knowledge Snippets:
 {knowledge_ctx}
@@ -401,7 +466,6 @@ Identify the best matching grasp label from the video frames and context above.
             )
 
         # Clean and validate the response to extract Coarse:Fine
-        import re
 
         text = response_text.strip()
 
@@ -669,6 +733,8 @@ class OmniDexReasoner:
                 "opposition_type": data["interaction"].opposition_type,
                 "thumb_position": data["interaction"].thumb_position,
                 "virtual_fingers": data["interaction"].virtual_fingers,
+                "object_shape": data["interaction"].object_shape,
+                "contact_region": data["interaction"].contact_region,
             }
 
         result = {
