@@ -28,10 +28,11 @@ class GraspKnowledgeBase:
         self.entries: List[KBEntry] = [
             # Large Diameter
             self._entry("Power", "Large Diameter", "Palm", "Abd", "2-5", "Cylinder, Tapered Cylinder, Cuboid/Prismatic, Handle, Ring, Torus, Ring-Plate, Rim/Edge", "sidewall/rim", ""),
-
+            # Ring 
+            self._entry("Power", "Ring", "Palm", "Abd", "2", "Cylinder, Tapered Cylinder, Cuboid/Prismatic, Handle, Ring, Torus, Ring-Plate, Rim/Edge", "sidewall/rim", ""),
             # Prismatic 4 Finger
             # Added Cylinder/Round objects as this category absorbs Circular 4 Finger in simplified taxonomies
-            self._entry("Precision", "Prismatic 4 Finger", "Pad", "Abd", "2-5", "Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object", "edge/sidewall", ""),
+            self._entry("Precision", "Prismatic 4 Finger", "Pad", "Abd", "2-5", "Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object", "edge/sidewall/face", ""),
 
             # Inferior Pincer
             self._entry("Precision", "Inferior Pincer", "Pad", "Abd", "2", "Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder", "edge/sidewall", ""),
@@ -40,7 +41,7 @@ class GraspKnowledgeBase:
             self._entry("Precision", "Precision Sphere", "Pad", "Abd", "2-5", "Sphere/Ellipsoid, Knob, Small Ball-like Object", "surface", ""),
 
             # Lateral
-            self._entry("Intermediate", "Lateral", "Side", "Add", "2", "Plate/Sheet, Edge, Tab/Pull-Tab, Prismatic", "edge", ""),
+            self._entry("Intermediate", "Lateral", "Side", "Add", "2", "Plate/Sheet, Edge, Tab/Pull-Tab, Prismatic", "edge/face", ""),
 
             # Adducted Thumb
             self._entry("Power", "Adducted Thumb", "Palm", "Add", "2-5", "Cylinder/Cuboid, Handle, Prismatic, Knob", "sidewall", ""),

@@ -31773,3 +31773,2750 @@ Analyze the video and describe the task as requested.
 2026-01-16 20:30:06,588 - RESPONSE:
 Use the left hand with a precision sphere grasp to pick up the rim of a paper cup and use the right hand with a precision sphere grasp to place a lid onto the cup.
 2026-01-16 20:30:06,589 - ========================================
+2026-01-17 02:30:22,649 - ========================================
+2026-01-17 02:30:22,649 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:22,649 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:22,649 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:22,649 - RESPONSE:
+{"active_hands": ["left", "right"]}
+2026-01-17 02:30:22,650 - ========================================
+2026-01-17 02:30:23,378 - ========================================
+2026-01-17 02:30:23,379 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:23,379 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:23,379 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:23,379 - RESPONSE:
+{"active_hands": ["right"]}
+2026-01-17 02:30:23,379 - ========================================
+2026-01-17 02:30:23,580 - ========================================
+2026-01-17 02:30:23,580 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:23,580 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:23,580 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:23,581 - RESPONSE:
+{"active_hands": ["left", "right"]}
+2026-01-17 02:30:23,581 - ========================================
+2026-01-17 02:30:23,866 - ========================================
+2026-01-17 02:30:23,866 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:23,866 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:23,866 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:23,867 - RESPONSE:
+{"active_hands": ["right"]}
+2026-01-17 02:30:23,867 - ========================================
+2026-01-17 02:30:23,975 - ========================================
+2026-01-17 02:30:23,976 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:23,976 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:23,976 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:23,976 - RESPONSE:
+{"active_hands": ["left", "right"]}
+2026-01-17 02:30:23,976 - ========================================
+2026-01-17 02:30:24,436 - ========================================
+2026-01-17 02:30:24,436 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:24,436 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:24,436 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:24,436 - RESPONSE:
+{"active_hands": ["right"]}
+2026-01-17 02:30:24,436 - ========================================
+2026-01-17 02:30:24,474 - ========================================
+2026-01-17 02:30:24,474 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:24,474 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:24,474 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:24,474 - RESPONSE:
+{"active_hands": ["left", "right"]}
+2026-01-17 02:30:24,474 - ========================================
+2026-01-17 02:30:26,451 - ========================================
+2026-01-17 02:30:26,451 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:26,451 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:26,451 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:26,451 - RESPONSE:
+{"active_hands": ["left", "right"]}
+2026-01-17 02:30:26,452 - ========================================
+2026-01-17 02:30:27,152 - ========================================
+2026-01-17 02:30:27,152 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:27,152 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the LEFT HAND (visible on the left side of the image).
+
+TASK:
+Infer the following attributes for the LEFT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:27,152 - USER PROMPT:
+Analyze the LEFT HAND in the provided video frames.
+2026-01-17 02:30:27,152 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-5",
+  "object_shape": "Cylinder",
+  "contact_region": "rim"
+}
+```
+2026-01-17 02:30:27,152 - ========================================
+2026-01-17 02:30:28,252 - ========================================
+2026-01-17 02:30:28,252 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:28,252 - SYSTEM PROMPT:
+You are an expert in analyzing human hand-object interactions in first-person videos.
+The left side of the video frame corresponds to the Left Hand. The right side corresponds to the Right Hand.
+
+RULES:
+1. Analyze the video and determine which hands are actively manipulating an object.
+2. Ignore hands that are visible but NOT interacting with any object.
+3. Output format: A single JSON object with the key "active_hands" containing a list of strings (allowed: "left", "right").
+4. Examples: {"active_hands": ["right"]}, {"active_hands": ["left", "right"]}, or {"active_hands": []}.
+
+2026-01-17 02:30:28,252 - USER PROMPT:
+Analyze the provided video frames and identify the active hands.
+2026-01-17 02:30:28,252 - RESPONSE:
+{"active_hands": ["left", "right"]}
+2026-01-17 02:30:28,252 - ========================================
+2026-01-17 02:30:28,565 - ========================================
+2026-01-17 02:30:28,566 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:28,566 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the LEFT HAND (visible on the left side of the image).
+
+TASK:
+Infer the following attributes for the LEFT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:28,566 - USER PROMPT:
+Analyze the LEFT HAND in the provided video frames.
+2026-01-17 02:30:28,566 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-5",
+  "object_shape": "Cylinder",
+  "contact_region": "rim"
+}
+```
+2026-01-17 02:30:28,566 - ========================================
+2026-01-17 02:30:30,438 - ========================================
+2026-01-17 02:30:30,438 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:30,438 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:30,438 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:30,438 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:30,438 - ========================================
+2026-01-17 02:30:30,724 - ========================================
+2026-01-17 02:30:30,724 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:30,724 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:30,724 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:30,725 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2",
+  "object_shape": "Cylinder",
+  "contact_region": "rim"
+}
+```
+2026-01-17 02:30:30,725 - ========================================
+2026-01-17 02:30:31,095 - ========================================
+2026-01-17 02:30:31,095 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:31,095 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:31,095 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:31,095 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2",
+  "object_shape": "Cylinder",
+  "contact_region": "rim"
+}
+```
+2026-01-17 02:30:31,095 - ========================================
+2026-01-17 02:30:31,203 - ========================================
+2026-01-17 02:30:31,203 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:31,203 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the LEFT HAND (visible on the left side of the image).
+
+TASK:
+Infer the following attributes for the LEFT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:31,203 - USER PROMPT:
+Analyze the LEFT HAND in the provided video frames.
+2026-01-17 02:30:31,203 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-5",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:31,203 - ========================================
+2026-01-17 02:30:31,285 - ========================================
+2026-01-17 02:30:31,286 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:31,286 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the LEFT HAND (visible on the left side of the image).
+
+TASK:
+Infer the following attributes for the LEFT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:31,286 - USER PROMPT:
+Analyze the LEFT HAND in the provided video frames.
+2026-01-17 02:30:31,286 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:31,286 - ========================================
+2026-01-17 02:30:33,215 - ========================================
+2026-01-17 02:30:33,216 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:33,216 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the LEFT HAND (visible on the left side of the image).
+
+TASK:
+Infer the following attributes for the LEFT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:33,216 - USER PROMPT:
+Analyze the LEFT HAND in the provided video frames.
+2026-01-17 02:30:33,216 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-5",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:33,216 - ========================================
+2026-01-17 02:30:34,241 - ========================================
+2026-01-17 02:30:34,242 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:34,242 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the LEFT HAND (visible on the left side of the image).
+
+TASK:
+Infer the following attributes for the LEFT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:34,242 - USER PROMPT:
+Analyze the LEFT HAND in the provided video frames.
+2026-01-17 02:30:34,242 - RESPONSE:
+```json
+{
+  "opposition_type": "Palm",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-5",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:34,242 - ========================================
+2026-01-17 02:30:35,438 - ========================================
+2026-01-17 02:30:35,438 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:35,438 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:35,438 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: rim
+
+Reference Knowledge Snippets:
+- Label: Precision:Prismatic_4_Finger
+  Coarse Type: Precision
+  Fine Type: Prismatic 4 Finger
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object
+  Contact Region: edge/sidewall/face
+- Label: Precision:Precision_Sphere
+  Coarse Type: Precision
+  Fine Type: Precision Sphere
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object
+  Contact Region: surface
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:35,438 - RESPONSE:
+The user is interacting with a paper cup.
+The provided context states:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: rim
+
+Let's evaluate the provided knowledge snippets:
+
+1.  **Label: Precision:Prismatic_4_Finger**
+    *   Coarse Type: Precision (Matches the general idea of precise manipulation)
+    *   Fine Type: Prismatic 4 Finger (The object is a cylinder, which can be considered prismatic. The virtual fingers are described as 1 vs 2-5, implying multiple fingers are used in opposition to the thumb, which aligns with a 4-finger grasp.)
+    *   Opposition: Pad (Matches)
+    *   Thumb: Abd (Matches)
+    *   Virtual Fingers (VF2): 2-5 (The context states VF2: 1 vs 2-5, which means the thumb (VF1) is opposed by fingers 2-5. This aligns with the snippet's VF2: 2-5.)
+    *   Object Shape: Cylinder (Matches)
+    *   Contact Region: edge/sidewall/face (The context states "rim", which is an edge of the cylinder. This is a good match.)
+
+2.  **Label: Precision:Precision_Sphere**
+    *   Coarse Type: Precision (Matches)
+    *   Fine Type: Precision Sphere (The object is a cylinder, not a sphere. This is a mismatch.)
+    *   Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object (Mismatch)
+
+Based on the analysis, **Precision:Prismatic_4_Finger** is the best match. The object is a cylinder, the thumb is abducted, opposition is by pad, and the contact is on the rim (edge). The virtual finger configuration of 1 vs 2-5 also supports a grasp involving multiple fingers opposing the thumb.
+
+Final Grasp: Precision:Prismatic_4_Finger
+2026-01-17 02:30:35,438 - ========================================
+2026-01-17 02:30:36,514 - ========================================
+2026-01-17 02:30:36,514 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:36,514 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:36,514 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: rim
+
+Reference Knowledge Snippets:
+- Label: Precision:Prismatic_4_Finger
+  Coarse Type: Precision
+  Fine Type: Prismatic 4 Finger
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object
+  Contact Region: edge/sidewall/face
+- Label: Precision:Precision_Sphere
+  Coarse Type: Precision
+  Fine Type: Precision Sphere
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object
+  Contact Region: surface
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:36,514 - RESPONSE:
+The user is holding a paper cup.
+The opposition type is 'Pad', meaning the thumb pad is used for opposition.
+The thumb position is 'Abd', meaning the thumb is abducted (moved away from the palm).
+The virtual fingers are described as 'VF2: 1 vs 2-5', which implies the thumb is opposed by the other four fingers.
+The object shape is 'Cylinder'.
+The contact region is 'rim'.
+
+Let's evaluate the provided knowledge snippets:
+
+1.  **Label: Precision:Prismatic_4_Finger**
+    *   Coarse Type: Precision - Matches the general idea of a precise grasp.
+    *   Fine Type: Prismatic 4 Finger - The object is a cylinder, which can be considered prismatic. The grasp involves the thumb and other fingers.
+    *   Opposition: Pad - Matches the provided context.
+    *   Thumb: Abd - Matches the provided context.
+    *   Virtual Fingers (VF2): 2-5 - This is a key differentiator. The provided context states 'VF2: 1 vs 2-5', which means the thumb (1) is opposed by fingers 2-5. This snippet's VF2 attribute is '2-5', which implies the fingers 2-5 are involved in opposition, but it doesn't explicitly state the thumb is opposed by *all* of them. However, the description "1 vs 2-5" strongly suggests the thumb is opposed by the collective action of fingers 2-5.
+    *   Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object - 'Cylinder' is listed as a valid object shape.
+    *   Contact Region: edge/sidewall/face - The provided context states 'rim'. The rim of a cylinder is an edge. This is a close match.
+
+2.  **Label: Precision:Precision_Sphere**
+    *   Coarse Type: Precision - Matches.
+    *   Fine Type: Precision Sphere - The object is a cylinder, not a sphere. This does not match.
+    *   Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object - 'Cylinder' is not listed. This does not match.
+
+Based on the analysis, **Precision:Prismatic_4_Finger** is the best match. The grasp involves the thumb and other fingers opposing each other to hold a cylindrical object by its rim. The 'VF2: 1 vs 2-5' description aligns with the thumb being opposed by the collective action of the other fingers, which is characteristic of a 4-finger grasp in this context. The contact region 'rim' is consistent with the 'edge' contact region for a cylinder.
+
+Final check:
+- Opposition Type: Pad (Matches)
+- Thumb Position: Abd (Matches)
+- Virtual Fingers: VF2: 1 vs 2-5 (Implies thumb opposed by fingers 2-5, consistent with Prismatic_4_Finger)
+- Object Shape: Cylinder (Matches)
+- Contact Region: rim (Matches edge/rim of a cylinder)
+
+All key attributes align with Precision:Prismatic_4_Finger.
+
+Final Grasp: Precision:Prismatic_4_Finger
+2026-01-17 02:30:36,514 - ========================================
+2026-01-17 02:30:36,971 - ========================================
+2026-01-17 02:30:36,971 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:36,971 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:36,971 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Inferior_Pincer
+  Coarse Type: Precision
+  Fine Type: Inferior Pincer
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2
+  Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder
+  Contact Region: edge/sidewall
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:36,971 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's the step-by-step reasoning:
+
+1.  **Analyze the provided context from the video:**
+    *   Opposition Type: Pad (This means the thumb and fingers are opposing each other with their pads).
+    *   Thumb Position: Abd (Abducted, meaning spread away from the palm).
+    *   Virtual Fingers: VF2: 1 vs 2 (This indicates a two-finger grasp, likely index and middle finger, opposing the thumb).
+    *   Object Shape: Cylinder (The object being grasped is cylindrical).
+    *   Contact Region: sidewall (The contact is on the side of the object).
+
+2.  **Analyze the provided reference knowledge snippet:**
+    *   Label: Precision:Inferior_Pincer
+    *   Coarse Type: Precision
+    *   Fine Type: Inferior Pincer
+    *   Opposition: Pad (Matches video context)
+    *   Thumb: Abd (Matches video context)
+    *   Virtual Fingers (VF2): 2 (Matches video context, as "1 vs 2" implies two fingers are involved in opposition with the thumb).
+    *   Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder (The "Cylinder" object shape matches the video context).
+    *   Contact Region: edge/sidewall (The "sidewall" contact region matches the video context).
+
+3.  **Compare the video context with the knowledge snippet:**
+    *   Opposition Type (Pad) matches.
+    *   Thumb Position (Abd) matches.
+    *   Virtual Fingers (VF2: 1 vs 2) matches VF2: 2.
+    *   Object Shape (Cylinder) matches.
+    *   Contact Region (sidewall) matches edge/sidewall.
+
+4.  **Conclusion:** All the key attributes from the video context align perfectly with the "Precision:Inferior_Pincer" grasp type described in the knowledge snippet.
+
+Final Grasp: Precision:Inferior_Pincer
+2026-01-17 02:30:36,971 - ========================================
+2026-01-17 02:30:38,005 - ========================================
+2026-01-17 02:30:38,005 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:38,006 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:38,006 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+- Object Shape: Cylinder
+- Contact Region: rim
+
+Reference Knowledge Snippets:
+- Label: Precision:Inferior_Pincer
+  Coarse Type: Precision
+  Fine Type: Inferior Pincer
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2
+  Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder
+  Contact Region: edge/sidewall
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:38,006 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's the reasoning process:
+
+1.  **Analyze the provided context from the video:**
+    *   Opposition Type: Pad (This refers to how the thumb opposes the fingers, specifically the fleshy pad of the thumb).
+    *   Thumb Position: Abd (Abducted, meaning spread away from the palm).
+    *   Virtual Fingers: VF2: 1 vs 2 (This indicates the number of fingers involved in opposition with the thumb. "1 vs 2" suggests one finger opposing two fingers, or a similar configuration where the thumb is opposed by a group of fingers).
+    *   Object Shape: Cylinder (The object being grasped is a cylinder, like a cup).
+    *   Contact Region: rim (The grasp is making contact with the rim of the object).
+
+2.  **Analyze the provided Reference Knowledge Snippets:**
+    *   **Label: Precision:Inferior_Pincer**
+        *   Coarse Type: Precision
+        *   Fine Type: Inferior Pincer
+        *   Opposition: Pad (Matches video context)
+        *   Thumb: Abd (Matches video context)
+        *   Virtual Fingers (VF2): 2 (This is a key differentiator. The video context states "VF2: 1 vs 2", which implies a configuration where the thumb opposes a group of fingers. The snippet specifies "VF2: 2", which is consistent with the thumb opposing two fingers, or a similar arrangement where the thumb is opposed by multiple fingers).
+        *   Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder (Matches video context for "Cylinder" and "Rim/Edge").
+        *   Contact Region: edge/sidewall (Matches video context for "rim").
+
+3.  **Compare and Match:**
+    *   The video context shows "Opposition Type: Pad", "Thumb Position: Abd", "Object Shape: Cylinder", and "Contact Region: rim".
+    *   The "Precision:Inferior_Pincer" snippet has matching attributes for "Opposition: Pad", "Thumb: Abd", "Object Shape: Cylinder", and "Contact Region: edge/sidewall" (which aligns with "rim").
+    *   The "Virtual Fingers (VF2): 1 vs 2" from the video context is slightly ambiguous but strongly suggests an opposition involving the thumb and multiple fingers. The snippet's "VF2: 2" is consistent with this, implying the thumb opposes two fingers. This configuration is characteristic of an inferior pincer grasp where the thumb opposes the distal phalanges of two fingers.
+
+4.  **Evaluate other potential labels (if any were provided for comparison, but in this case, only one snippet is given as a reference for a specific label):** Since only one detailed snippet is provided, and it matches most of the key attributes from the video context, it's highly likely to be the correct classification. The "VF2: 1 vs 2" from the video context, when interpreted in conjunction with the "VF2: 2" from the snippet, points towards the thumb opposing two fingers. This is a common configuration for an inferior pincer grasp when holding a cylindrical object by its rim.
+
+5.  **Final Classification:** Based on the strong alignment of attributes, the grasp is classified as "Precision:Inferior_Pincer".
+
+Final Grasp: Precision:Inferior_Pincer
+2026-01-17 02:30:38,006 - ========================================
+2026-01-17 02:30:38,984 - ========================================
+2026-01-17 02:30:38,984 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:38,984 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:38,984 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Prismatic_4_Finger
+  Coarse Type: Precision
+  Fine Type: Prismatic 4 Finger
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object
+  Contact Region: edge/sidewall/face
+- Label: Precision:Precision_Sphere
+  Coarse Type: Precision
+  Fine Type: Precision Sphere
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object
+  Contact Region: surface
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:38,984 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's the reasoning process:
+
+1.  **Analyze the Visual Context:**
+    *   The hand is holding a white paper cup.
+    *   The thumb is abducted (spread away from the palm).
+    *   The fingers are wrapped around the sidewall of the cup.
+    *   The opposition type appears to be pad-to-pad or pad-to-side.
+    *   The object is cylindrical.
+
+2.  **Analyze the Provided Contextual Information:**
+    *   Opposition Type: Pad
+    *   Thumb Position: Abd (Abducted)
+    *   Virtual Fingers: VF2: 1 vs 2-5 (This indicates the thumb is opposing the other four fingers, or at least a group of them).
+    *   Object Shape: Cylinder
+    *   Contact Region: sidewall
+
+3.  **Evaluate the Reference Knowledge Snippets:**
+
+    *   **Label: Precision:Prismatic_4_Finger**
+        *   Coarse Type: Precision - Matches the general idea of a controlled grasp.
+        *   Fine Type: Prismatic 4 Finger - The object is cylindrical, which can be considered a type of prismatic object in a broader sense, or at least a shape that can be grasped with multiple fingers.
+        *   Opposition: Pad - Matches the visual context.
+        *   Thumb: Abd - Matches the visual context.
+        *   Virtual Fingers (VF2): 2-5 - This is a key differentiator. The provided context states "VF2: 1 vs 2-5", which means the thumb (1) is opposing the other fingers (2-5). This snippet also lists "VF2: 2-5". This is a strong match.
+        *   Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object - "Cylinder" is explicitly listed. This is a strong match.
+        *   Contact Region: edge/sidewall/face - "sidewall" is explicitly listed. This is a strong match.
+
+    *   **Label: Precision:Precision_Sphere**
+        *   Coarse Type: Precision - Matches.
+        *   Fine Type: Precision Sphere - The object is a cylinder, not a sphere. This is a mismatch.
+        *   Opposition: Pad - Matches.
+        *   Thumb: Abd - Matches.
+        *   Virtual Fingers (VF2): 2-5 - Matches.
+        *   Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object - "Cylinder" is not listed. This is a mismatch.
+        *   Contact Region: surface - While the sidewall is a surface, the "sidewall" is more specific and matches the other snippet better.
+
+4.  **Compare and Select the Best Match:**
+    *   The "Precision:Prismatic_4_Finger" label aligns perfectly with all the provided contextual information: Opposition (Pad), Thumb Position (Abd), Virtual Fingers (1 vs 2-5, which implies opposition of thumb to other fingers), Object Shape (Cylinder), and Contact Region (sidewall).
+    *   The "Precision:Precision_Sphere" label is a clear mismatch due to the object shape.
+
+5.  **Determine the Final Output Format:** The output must be "Coarse:Fine".
+
+    *   From the selected label "Precision:Prismatic_4_Finger", the Coarse Type is "Precision" and the Fine Type is "Prismatic_4_Finger".
+
+Final Answer Derivation:
+The visual context and provided attributes (Opposition Type: Pad, Thumb Position: Abd, Virtual Fingers: VF2: 1 vs 2-5, Object Shape: Cylinder, Contact Region: sidewall) strongly match the knowledge snippet for "Precision:Prismatic_4_Finger". The "VF2: 1 vs 2-5" indicates the thumb opposing the other fingers, which is consistent with the visual. The object shape being a cylinder and the contact region being the sidewall are also direct matches.
+
+Final Grasp: Precision:Prismatic_4_Finger
+2026-01-17 02:30:38,984 - ========================================
+2026-01-17 02:30:39,849 - ========================================
+2026-01-17 02:30:39,849 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:39,849 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:39,849 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Prismatic_4_Finger
+  Coarse Type: Precision
+  Fine Type: Prismatic 4 Finger
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object
+  Contact Region: edge/sidewall/face
+- Label: Precision:Precision_Sphere
+  Coarse Type: Precision
+  Fine Type: Precision Sphere
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object
+  Contact Region: surface
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:39,849 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's the reasoning process:
+
+1.  **Analyze the provided context:**
+    *   Opposition Type: Pad
+    *   Thumb Position: Abd (Abducted)
+    *   Virtual Fingers (VF2): 1 vs 2-5 (This indicates the thumb is opposed by the other four fingers, or at least a significant portion of them).
+    *   Object Shape: Cylinder
+    *   Contact Region: Sidewall
+
+2.  **Analyze the provided knowledge snippets:**
+    *   **Snippet 1: Precision:Prismatic_4_Finger**
+        *   Coarse Type: Precision
+        *   Fine Type: Prismatic 4 Finger
+        *   Opposition: Pad (Matches context)
+        *   Thumb: Abd (Matches context)
+        *   Virtual Fingers (VF2): 2-5 (This is a slight mismatch. The context says "1 vs 2-5", which implies the thumb is opposed by fingers 2-5. The snippet says "2-5". This is generally consistent with a 4-finger grasp where the thumb opposes the other four fingers).
+        *   Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object (Matches context - Cylinder)
+        *   Contact Region: edge/sidewall/face (Matches context - Sidewall)
+
+    *   **Snippet 2: Precision:Precision_Sphere**
+        *   Coarse Type: Precision
+        *   Fine Type: Precision Sphere
+        *   Opposition: Pad (Matches context)
+        *   Thumb: Abd (Matches context)
+        *   Virtual Fingers (VF2): 2-5 (This is a slight mismatch, similar to the above, but the general idea of thumb opposing other fingers holds).
+        *   Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object (Does NOT match context - Cylinder)
+        *   Contact Region: surface (Does NOT match context - Sidewall)
+
+3.  **Compare context with snippets:**
+    *   The context's "Opposition Type: Pad", "Thumb Position: Abd", "Object Shape: Cylinder", and "Contact Region: Sidewall" are all key discriminators.
+    *   Snippet 1 ("Precision:Prismatic_4_Finger") matches all these key discriminators: Opposition (Pad), Thumb (Abd), Object Shape (Cylinder), and Contact Region (Sidewall). The VF2 description is also consistent with a 4-finger grasp.
+    *   Snippet 2 ("Precision:Precision_Sphere") fails to match the Object Shape (Cylinder vs. Sphere/Ellipsoid) and Contact Region (Sidewall vs. Surface).
+
+4.  **Conclusion:** Snippet 1 is the best match. The grasp is a Precision grasp, and the fine type is Prismatic 4 Finger because it involves opposition of the thumb with the other fingers (VF2: 1 vs 2-5 implies thumb vs. other fingers) to grasp a cylindrical object by its sidewall.
+
+5.  **Format the output:** The required format is "Final Grasp: Coarse:Fine".
+
+Final Grasp: Precision:Prismatic_4_Finger
+2026-01-17 02:30:39,849 - ========================================
+2026-01-17 02:30:40,117 - ========================================
+2026-01-17 02:30:40,117 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:40,117 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:40,117 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:40,117 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-5",
+  "object_shape": "Cylinder",
+  "contact_region": "rim"
+}
+```
+2026-01-17 02:30:40,117 - ========================================
+2026-01-17 02:30:40,615 - ========================================
+2026-01-17 02:30:40,615 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:40,615 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:40,615 - USER PROMPT:
+Context from video:
+- Opposition Type: Palm
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Power:Large_Diameter
+  Coarse Type: Power
+  Fine Type: Large Diameter
+  Opposition: Palm
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Cylinder, Tapered Cylinder, Cuboid/Prismatic, Handle, Ring, Torus, Ring-Plate, Rim/Edge
+  Contact Region: sidewall/rim
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:40,615 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's a step-by-step reasoning process:
+
+1.  **Analyze the provided context from the video:**
+    *   **Opposition Type:** Palm. This indicates the palm is involved in the grasp.
+    *   **Thumb Position:** Abd (Abducted). The thumb is spread away from the palm.
+    *   **Virtual Fingers (VF2):** VF2: 1 vs 2-5. This means one virtual finger (likely the thumb) is opposed to the other four virtual fingers (index, middle, ring, and pinky).
+    *   **Object Shape:** Cylinder. The object being grasped is cylindrical.
+    *   **Contact Region:** Sidewall. The contact is on the side of the object.
+
+2.  **Analyze the provided reference knowledge snippet for "Power:Large_Diameter":**
+    *   **Coarse Type:** Power.
+    *   **Fine Type:** Large Diameter.
+    *   **Opposition:** Palm. (Matches video context)
+    *   **Thumb:** Abd. (Matches video context)
+    *   **Virtual Fingers (VF2):** 2-5. This means the other fingers (index, middle, ring, pinky) are involved in the grasp, opposing the thumb. The video context states "VF2: 1 vs 2-5", which implies the thumb (1) is opposed to the other fingers (2-5). This aligns with the "Power:Large_Diameter" description where the fingers wrap around the object.
+    *   **Object Shape:** Cylinder, Tapered Cylinder, Cuboid/Prismatic, Handle, Ring, Torus, Ring-Plate, Rim/Edge. (Cylinder matches video context)
+    *   **Contact Region:** Sidewall/rim. (Sidewall matches video context)
+
+3.  **Compare the video context with the knowledge snippet:**
+    *   Opposition Type: Palm (Match)
+    *   Thumb Position: Abd (Match)
+    *   Virtual Fingers: The video context "VF2: 1 vs 2-5" implies the thumb is opposed to the other fingers. The knowledge snippet for "Power:Large_Diameter" lists "VF2: 2-5", which means the other fingers are involved. This is consistent with a power grasp where fingers wrap around the object.
+    *   Object Shape: Cylinder (Match)
+    *   Contact Region: Sidewall (Match)
+
+4.  **Evaluate other potential grasp types (though only one is provided for comparison):**
+    *   The provided context strongly aligns with the "Power:Large_Diameter" grasp. The palm is involved, the thumb is abducted, the object is a cylinder, and the contact is on the sidewall. This type of grasp is used for larger objects where force is applied. The visual shows the hand wrapping around the cup, which is characteristic of a power grasp on a large diameter object.
+
+5.  **Conclusion:** All the provided attributes from the video context perfectly match the criteria for the "Power:Large_Diameter" grasp as described in the knowledge snippet.
+
+Final Grasp: Power:Large_Diameter
+2026-01-17 02:30:40,615 - ========================================
+2026-01-17 02:30:40,653 - ========================================
+2026-01-17 02:30:40,653 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:40,653 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:40,653 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Inferior_Pincer
+  Coarse Type: Precision
+  Fine Type: Inferior Pincer
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2
+  Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder
+  Contact Region: edge/sidewall
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:40,653 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's a step-by-step reasoning process:
+
+1.  **Analyze the provided context from the video:**
+    *   **Opposition Type:** Pad. This means the thumb and fingers are making contact with their fleshy pads.
+    *   **Thumb Position:** Abd (Abducted). The thumb is spread away from the palm.
+    *   **Virtual Fingers (VF2):** 1 vs 2. This indicates that one virtual finger (likely the thumb) is opposing two virtual fingers (likely index and middle fingers).
+    *   **Object Shape:** Cylinder. The object being grasped is cylindrical.
+    *   **Contact Region:** Sidewall. The contact is made on the side of the object.
+
+2.  **Analyze the provided reference knowledge snippet:**
+    *   **Label:** Precision:Inferior_Pincer
+    *   **Coarse Type:** Precision
+    *   **Fine Type:** Inferior Pincer
+    *   **Opposition:** Pad (Matches video context)
+    *   **Thumb:** Abd (Matches video context)
+    *   **Virtual Fingers (VF2):** 2 (This is a discrepancy. The video context states "1 vs 2", which implies the thumb is one virtual finger and the opposing fingers are two. The knowledge snippet states "VF2: 2". This usually refers to the number of *opposing* virtual fingers. If VF2 refers to the *total* number of virtual fingers involved in the opposition, then "1 vs 2" would mean 3 total, which doesn't fit. However, in grasp taxonomy, VF2 often refers to the number of fingers opposing the thumb. So, "1 vs 2" means 1 thumb opposing 2 fingers. The knowledge snippet's "VF2: 2" likely refers to the two fingers opposing the thumb.)
+    *   **Object Shape:** Cylinder (Matches video context)
+    *   **Contact Region:** edge/sidewall (Matches video context's "sidewall")
+
+3.  **Compare context with knowledge snippet:**
+    *   Opposition Type: Pad (Match)
+    *   Thumb Position: Abd (Match)
+    *   Object Shape: Cylinder (Match)
+    *   Contact Region: Sidewall (Match)
+    *   Virtual Fingers (VF2): The video context "1 vs 2" strongly suggests a grasp where the thumb opposes two fingers. The knowledge snippet's "VF2: 2" aligns with this interpretation, meaning two fingers are opposing the thumb. This is characteristic of an inferior pincer grasp.
+
+4.  **Evaluate the "Precision:Inferior_Pincer" label:**
+    *   **Coarse Type: Precision:** This is a precision grasp because it involves fine motor control and opposition of digits to manipulate a smaller object or a specific part of an object. The context of using pads for opposition and the specific finger/thumb configuration points to precision.
+    *   **Fine Type: Inferior Pincer:** An inferior pincer grasp typically involves the thumb pad opposing the pads of the index and middle fingers, often used for cylindrical objects or objects with a rim. The "1 vs 2" virtual finger configuration, pad opposition, and sidewall contact on a cylinder are all consistent with an inferior pincer grasp.
+
+5.  **Consider other possible labels (and why they don't fit):**
+    *   **Power:Large_Diameter:** This is a power grasp, not precision. The object is a cup, which could be considered large, but the *manner* of grasping (pad opposition, specific finger configuration) is precision-oriented.
+    *   **Power:Ring:** This is a power grasp, typically around a ring-shaped object. Not applicable here.
+    *   **Precision:Prismatic_4_Finger:** This involves four fingers and a thumb, often for prismatic objects. The "1 vs 2" virtual finger configuration doesn't fit.
+    *   **Precision:Inferior_Pincer:** This is the candidate.
+    *   **Precision:Precision_Sphere:** This is for spherical objects. The object is a cylinder.
+    *   **Intermediate:Lateral:** This involves the side of the thumb against the side of a finger. The context indicates pad opposition.
+    *   **Power:Adducted_Thumb:** This is a power grasp with the thumb adducted (tucked in). The context states the thumb is abducted.
+
+6.  **Conclusion:** All the provided contextual cues (Opposition Type: Pad, Thumb Position: Abd, Virtual Fingers: 1 vs 2, Object Shape: Cylinder, Contact Region: Sidewall) strongly align with the characteristics of the "Precision:Inferior_Pincer" grasp as described in the reference knowledge snippet. The "VF2: 2" in the knowledge snippet, when interpreted as the number of opposing fingers, confirms this.
+
+Final Answer should be in the format "Coarse:Fine".
+
+Final Grasp: Precision:Inferior_Pincer
+2026-01-17 02:30:40,653 - ========================================
+2026-01-17 02:30:41,332 - ========================================
+2026-01-17 02:30:41,333 - ========================================
+2026-01-17 02:30:41,333 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:41,333 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:41,333 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:41,333 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:41,333 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:41,333 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+- Object Shape: Cylinder
+- Contact Region: rim
+
+Reference Knowledge Snippets:
+- Label: Precision:Inferior_Pincer
+  Coarse Type: Precision
+  Fine Type: Inferior Pincer
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2
+  Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder
+  Contact Region: edge/sidewall
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:41,333 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-5",
+  "object_shape": "Cylinder, Rim",
+  "contact_region": "rim, sidewall"
+}
+```
+2026-01-17 02:30:41,334 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's the step-by-step reasoning:
+
+1.  **Analyze the provided context from the video:**
+    *   Opposition Type: Pad (This means the thumb and fingers are making contact with their pads).
+    *   Thumb Position: Abd (Abducted, meaning spread away from the palm).
+    *   Virtual Fingers (VF2): 1 vs 2 (This indicates that one virtual finger is opposing two virtual fingers. In the context of human hands, this often translates to the thumb opposing two fingers, or one finger opposing two fingers).
+    *   Object Shape: Cylinder (The object being grasped is cylindrical, like a cup).
+    *   Contact Region: rim (The contact is made at the rim of the object).
+
+2.  **Analyze the provided reference knowledge snippet:**
+    *   Label: Precision:Inferior_Pincer
+    *   Coarse Type: Precision
+    *   Fine Type: Inferior Pincer
+    *   Opposition: Pad (Matches video context)
+    *   Thumb: Abd (Matches video context)
+    *   Virtual Fingers (VF2): 2 (This is a mismatch with the video context of "1 vs 2". However, the description of "Inferior Pincer" often implies a thumb opposing one or two fingers, and the visual context of the hand holding the cup suggests the thumb is opposing the index and middle fingers, which would be 1 vs 2 virtual fingers if we consider the thumb as one and the index/middle as two separate virtual fingers, or 1 vs 1 if we consider the thumb as one and the combined index/middle as another virtual finger. The "1 vs 2" in the video context is a bit ambiguous. Let's re-evaluate this. If VF2 refers to the number of *opposing* virtual fingers, then "1 vs 2" means one virtual finger opposes two virtual fingers. This aligns with the thumb (1) opposing the index and middle fingers (2). The knowledge snippet says VF2: 2, which is likely referring to the *total* number of virtual fingers involved in the opposition, or the number of fingers opposing the thumb. Given the "Inferior Pincer" description, it's more likely that the knowledge snippet's "VF2: 2" refers to the two fingers opposing the thumb. The video's "VF2: 1 vs 2" is a more precise description of the opposition configuration: thumb (1) vs. index and middle fingers (2). This is a strong match for an inferior pincer grasp where the thumb opposes two fingers.)
+    *   Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder (Matches video context of "Cylinder" and "rim").
+    *   Contact Region: edge/sidewall (Matches video context of "rim").
+
+3.  **Compare video context with knowledge snippets:**
+    *   Opposition Type: Pad (Match)
+    *   Thumb Position: Abd (Match)
+    *   Virtual Fingers (VF2): The video states "1 vs 2". The knowledge snippet for "Precision:Inferior_Pincer" states "VF2: 2". This is consistent with the thumb (1) opposing two fingers (2).
+    *   Object Shape: Cylinder (Match)
+    *   Contact Region: rim (Match)
+
+4.  **Evaluate the "Precision:Inferior_Pincer" label:**
+    *   The "Opposition: Pad", "Thumb: Abd", "Object Shape: Cylinder", and "Contact Region: rim" all strongly support this grasp.
+    *   The "Virtual Fingers (VF2): 1 vs 2" from the video context perfectly describes an inferior pincer grasp where the thumb opposes two fingers. The knowledge snippet's "VF2: 2" is likely referring to the two fingers opposing the thumb.
+
+5.  **Consider other possible labels (and why they don't fit):**
+    *   **Power:Large_Diameter:** The grasp is clearly precision-oriented, not power. The object is a cup, not necessarily large diameter in a way that requires power.
+    *   **Power:Ring:** No ring-like object is being grasped.
+    *   **Precision:Prismatic_4_Finger:** This implies a prismatic object and likely four fingers involved in a specific way, which doesn't match the cylindrical cup and the observed thumb-finger opposition.
+    *   **Precision:Inferior_Pincer:** This is the strong candidate.
+    *   **Precision:Precision_Sphere:** The object is a cylinder, not a sphere.
+    *   **Intermediate:Lateral:** Lateral grasps involve the side of the thumb against the side of a finger, which is not what's happening here.
+    *   **Power:Adducted_Thumb:** The thumb is abducted (spread), not adducted.
+
+6.  **Conclusion:** The "Precision:Inferior_Pincer" label is the best match based on all provided attributes and the visual evidence. The "1 vs 2" virtual finger configuration from the video strongly supports the inferior pincer description.
+
+Final Answer Derivation:
+- Coarse Type: Precision (from the label and the nature of the grasp)
+- Fine Type: Inferior Pincer (from the label and the opposition configuration)
+
+Final Grasp: Precision:Inferior_Pincer
+2026-01-17 02:30:41,334 - ========================================
+2026-01-17 02:30:41,334 - ========================================
+2026-01-17 02:30:41,576 - ========================================
+2026-01-17 02:30:41,576 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:41,576 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:41,576 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Inferior_Pincer
+- Grasp Taxonomy (natural): inferior pincer
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:41,576 - RESPONSE:
+Use the right hand with an inferior pincer grasp to pick up a paper cup from the table.
+2026-01-17 02:30:41,576 - ========================================
+2026-01-17 02:30:42,486 - ========================================
+2026-01-17 02:30:42,486 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:42,486 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:42,486 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Inferior_Pincer
+- Grasp Taxonomy (natural): inferior pincer
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:42,486 - RESPONSE:
+Use the right hand with an inferior pincer grasp to place the lid onto the rim of a white paper cup.
+2026-01-17 02:30:42,486 - ========================================
+2026-01-17 02:30:43,557 - ========================================
+2026-01-17 02:30:43,557 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:43,557 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:43,557 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:43,557 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:43,557 - ========================================
+2026-01-17 02:30:44,992 - ========================================
+2026-01-17 02:30:44,992 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:44,992 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:44,992 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:44,992 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2-5",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:44,992 - ========================================
+2026-01-17 02:30:45,846 - ========================================
+2026-01-17 02:30:45,846 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:45,846 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:45,846 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: rim
+
+Reference Knowledge Snippets:
+- Label: Precision:Prismatic_4_Finger
+  Coarse Type: Precision
+  Fine Type: Prismatic 4 Finger
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object
+  Contact Region: edge/sidewall/face
+- Label: Precision:Precision_Sphere
+  Coarse Type: Precision
+  Fine Type: Precision Sphere
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object
+  Contact Region: surface
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:45,846 - RESPONSE:
+The user is interacting with a paper cup.
+The provided context states:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: rim
+
+Let's evaluate the provided knowledge snippets:
+
+1.  **Label: Precision:Prismatic_4_Finger**
+    *   Coarse Type: Precision (Matches the general idea of precise manipulation)
+    *   Fine Type: Prismatic 4 Finger (The object is a cylinder, which can be considered prismatic. The virtual fingers are described as 1 vs 2-5, implying multiple fingers are used in opposition to the thumb, which aligns with a 4-finger grasp.)
+    *   Opposition: Pad (Matches)
+    *   Thumb: Abd (Matches)
+    *   Virtual Fingers (VF2): 2-5 (The context states VF2: 1 vs 2-5, which means the thumb (VF1) is opposed by fingers 2-5. This aligns with the snippet's VF2: 2-5.)
+    *   Object Shape: Cylinder (Matches)
+    *   Contact Region: edge/sidewall/face (The context states "rim", which is an edge of the cylinder. This is a good match.)
+
+2.  **Label: Precision:Precision_Sphere**
+    *   Coarse Type: Precision (Matches)
+    *   Fine Type: Precision Sphere (The object is a cylinder, not a sphere. This is a mismatch.)
+    *   Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object (Mismatch)
+
+Based on the analysis, **Precision:Prismatic_4_Finger** is the best match. The object is a cylinder, the thumb is abducted, opposition is by pad, and the contact is on the rim (edge). The virtual finger configuration of 1 vs 2-5 also supports a grasp involving multiple fingers opposing the thumb.
+
+Final Grasp: Precision:Prismatic_4_Finger
+2026-01-17 02:30:45,846 - ========================================
+2026-01-17 02:30:45,936 - ========================================
+2026-01-17 02:30:45,936 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:45,936 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:45,936 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:45,936 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:45,936 - ========================================
+2026-01-17 02:30:46,240 - ========================================
+2026-01-17 02:30:46,240 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:46,240 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:46,240 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Inferior_Pincer
+- Grasp Taxonomy (natural): inferior pincer
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:46,240 - RESPONSE:
+Use the right hand with an inferior pincer grasp to pick up the rim of a paper cup and place its lid on top.
+2026-01-17 02:30:46,241 - ========================================
+2026-01-17 02:30:46,684 - ========================================
+2026-01-17 02:30:46,684 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:46,684 - SYSTEM PROMPT:
+You are an expert in human grasping and grasp taxonomy.
+Focus ONLY on the RIGHT HAND (visible on the right side of the image).
+
+TASK:
+Infer the following attributes for the RIGHT HAND:
+1) Opposition type:
+   - Palm: Clear surface contact with the palm, thenar, or hypothenar area, bearing or wrapping the object.
+   - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
+   - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
+2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: Cavity, Cuboid, Cylinder, Edge, Ellipsoid, Handle, Hole, Knob, Plate, Prismatic, Pull-Tab, Rim, Ring, Ring-Plate, Sheet, Small Ball-like Object, Small Feature, Sphere, Tab, Tapered Cylinder, Torus (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: edge, rim, sidewall, surface, face (comma-separated).
+
+INSTRUCTIONS:
+Opposition Type (Palm/Pad/Side):
+- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
+- If NOT palm contact, decide between:
+  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
+  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+
+Thumb Position (Abd/Add) — evidence-first:
+- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
+- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
+- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+Decision rules:
+- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
+- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
+- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+
+Virtual Fingers (VF):
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
+
+Object Shape + Contact Region:
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
+- If the object or contact region is not visible/ambiguous, output "Unknown".
+
+Temporal guidance:
+- Integrate evidence across frames internally; prefer the dominant/stable grasp.
+
+OUTPUT:
+Return ONE valid JSON object ONLY (no extra text):
+{
+  "opposition_type": "Palm|Pad|Side|Unknown",
+  "thumb_position": "Abd|Add|Unknown",
+  "virtual_fingers": "string",
+  "object_shape": "string",
+  "contact_region": "string"
+}
+
+2026-01-17 02:30:46,684 - USER PROMPT:
+Analyze the RIGHT HAND in the provided video frames.
+2026-01-17 02:30:46,684 - RESPONSE:
+```json
+{
+  "opposition_type": "Pad",
+  "thumb_position": "Abd",
+  "virtual_fingers": "VF2: 1 vs 2",
+  "object_shape": "Cylinder",
+  "contact_region": "sidewall"
+}
+```
+2026-01-17 02:30:46,684 - ========================================
+2026-01-17 02:30:49,733 - ========================================
+2026-01-17 02:30:49,733 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:49,733 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:49,733 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder, Rim
+- Contact Region: rim, sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Prismatic_4_Finger
+  Coarse Type: Precision
+  Fine Type: Prismatic 4 Finger
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object
+  Contact Region: edge/sidewall/face
+- Label: Precision:Precision_Sphere
+  Coarse Type: Precision
+  Fine Type: Precision Sphere
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object
+  Contact Region: surface
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:49,733 - RESPONSE:
+The user is interacting with a cylindrical object (a cup). The grasp involves opposition by the pad of the thumb and fingers. The thumb is abducted. The virtual fingers are described as VF2: 1 vs 2-5, indicating that the thumb (VF1) is opposed to the other fingers (VF2-5). The contact region is the rim and sidewall of the cylinder.
+
+Let's evaluate the provided labels:
+
+1.  **Precision:Prismatic_4_Finger**:
+    *   Coarse Type: Precision (Matches)
+    *   Fine Type: Prismatic 4 Finger (The object is a cylinder, which can be considered a round object, and the grasp is likely using multiple fingers for precision. The "Prismatic" part might be a slight mismatch if strictly interpreted as prismatic shapes, but cylinders are often grouped with round objects in grasp taxonomies.)
+    *   Opposition: Pad (Matches)
+    *   Thumb: Abd (Matches)
+    *   Virtual Fingers (VF2): 2-5 (Matches the description "VF2: 1 vs 2-5" where VF1 is the thumb and VF2-5 are the other fingers.)
+    *   Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object (Matches "Cylinder")
+    *   Contact Region: edge/sidewall/face (Matches "rim" and "sidewall")
+
+2.  **Precision:Precision_Sphere**:
+    *   Coarse Type: Precision (Matches)
+    *   Fine Type: Precision Sphere (The object is a cylinder, not a sphere. This is a mismatch.)
+    *   Opposition: Pad (Matches)
+    *   Thumb: Abd (Matches)
+    *   Virtual Fingers (VF2): 2-5 (Matches)
+    *   Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object (Mismatch - object is a cylinder)
+    *   Contact Region: surface (The contact is on the rim and sidewall, which is a surface, but the object shape is the primary mismatch here.)
+
+Comparing the two, **Precision:Prismatic_4_Finger** is a much better fit because the object shape (Cylinder) and contact region (rim, sidewall) align well with the knowledge snippet for this label. While the object is not strictly prismatic, cylinders are often categorized alongside prismatic and round objects in grasp taxonomies, and the other attributes (opposition, thumb position, virtual fingers, contact region) are a strong match. The "Prismatic 4 Finger" part implies a precision grasp using multiple fingers, which is consistent with how one would hold a cup.
+
+The provided context "VF2: 1 vs 2-5" strongly suggests that the thumb is opposed to the other four fingers, which is characteristic of a precision grasp. The object is a cylinder, and the contact is on the rim and sidewall.
+
+Let's re-examine the "Fine Type" for Precision:Prismatic_4_Finger. The knowledge snippet lists "Cylinder, Round Object" under Object Shape. This suggests that this grasp type can apply to cylinders. The "Prismatic 4 Finger" part likely refers to the configuration of the fingers, where they are used in a way that could also grasp prismatic objects, but is also applicable to cylinders in a precision manner.
+
+Given the strong alignment of all other attributes and the inclusion of "Cylinder" in the object shape for Precision:Prismatic_4_Finger, this is the most appropriate classification.
+
+Final check:
+- Opposition Type: Pad (Matches Precision:Prismatic_4_Finger)
+- Thumb Position: Abd (Matches Precision:Prismatic_4_Finger)
+- Virtual Fingers: VF2: 1 vs 2-5 (Matches Precision:Prismatic_4_Finger where VF2 is 2-5)
+- Object Shape: Cylinder (Matches Precision:Prismatic_4_Finger)
+- Contact Region: rim, sidewall (Matches Precision:Prismatic_4_Finger)
+
+All key attributes align with Precision:Prismatic_4_Finger.
+
+Final Grasp: Precision:Prismatic_4_Finger
+2026-01-17 02:30:49,733 - ========================================
+2026-01-17 02:30:51,659 - ========================================
+2026-01-17 02:30:51,659 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:51,659 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:51,659 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Prismatic_4_Finger
+  Coarse Type: Precision
+  Fine Type: Prismatic 4 Finger
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object
+  Contact Region: edge/sidewall/face
+- Label: Precision:Precision_Sphere
+  Coarse Type: Precision
+  Fine Type: Precision Sphere
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2-5
+  Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object
+  Contact Region: surface
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:51,659 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's the reasoning process:
+
+1.  **Analyze the provided context:**
+    *   Opposition Type: Pad
+    *   Thumb Position: Abd (Abducted)
+    *   Virtual Fingers (VF2): 1 vs 2-5 (This indicates the thumb is opposed by the other four fingers, or at least a significant portion of them).
+    *   Object Shape: Cylinder
+    *   Contact Region: Sidewall
+
+2.  **Analyze the provided knowledge snippets:**
+    *   **Snippet 1: Precision:Prismatic_4_Finger**
+        *   Coarse Type: Precision
+        *   Fine Type: Prismatic 4 Finger
+        *   Opposition: Pad (Matches context)
+        *   Thumb: Abd (Matches context)
+        *   Virtual Fingers (VF2): 2-5 (This is a slight mismatch. The context says "1 vs 2-5", which implies the thumb is opposed by fingers 2-5. The snippet says "2-5". This is generally consistent with a 4-finger grasp where the thumb opposes the other four fingers).
+        *   Object Shape: Cuboid, Prismatic, Plate, Edge, Cylinder, Round Object (Matches context - Cylinder)
+        *   Contact Region: edge/sidewall/face (Matches context - Sidewall)
+
+    *   **Snippet 2: Precision:Precision_Sphere**
+        *   Coarse Type: Precision
+        *   Fine Type: Precision Sphere
+        *   Opposition: Pad (Matches context)
+        *   Thumb: Abd (Matches context)
+        *   Virtual Fingers (VF2): 2-5 (This is a slight mismatch, similar to the above, but the general idea of thumb opposing other fingers holds).
+        *   Object Shape: Sphere/Ellipsoid, Knob, Small Ball-like Object (Does NOT match context - Cylinder)
+        *   Contact Region: surface (Does NOT match context - Sidewall)
+
+3.  **Compare context with snippets:**
+    *   The context's "Opposition Type: Pad", "Thumb Position: Abd", "Object Shape: Cylinder", and "Contact Region: Sidewall" are all key discriminators.
+    *   Snippet 1 ("Precision:Prismatic_4_Finger") matches all these key discriminators: Opposition (Pad), Thumb (Abd), Object Shape (Cylinder), and Contact Region (Sidewall). The VF2 description is also consistent with a 4-finger grasp.
+    *   Snippet 2 ("Precision:Precision_Sphere") fails to match the Object Shape (Cylinder vs. Sphere/Ellipsoid) and Contact Region (Sidewall vs. Surface).
+
+4.  **Conclusion:** Snippet 1 is the best match. The grasp is a Precision grasp, and the fine type is Prismatic 4 Finger because it involves opposition of the thumb with the other fingers (VF2: 1 vs 2-5 implies thumb vs. other fingers) to grasp a cylindrical object by its sidewall.
+
+5.  **Format the output:** The required format is "Final Grasp: Coarse:Fine".
+
+Final Grasp: Precision:Prismatic_4_Finger
+2026-01-17 02:30:51,659 - ========================================
+2026-01-17 02:30:52,859 - ========================================
+2026-01-17 02:30:52,859 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:52,859 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:52,859 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Inferior_Pincer
+  Coarse Type: Precision
+  Fine Type: Inferior Pincer
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2
+  Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder
+  Contact Region: edge/sidewall
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:52,859 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's the reasoning process:
+
+1.  **Analyze the provided context from the video:**
+    *   Opposition Type: Pad (This means the thumb pad is used for opposition).
+    *   Thumb Position: Abd (Thumb is abducted, meaning it's spread away from the palm).
+    *   Virtual Fingers: VF2: 1 vs 2 (This indicates a two-finger grasp where one finger opposes the thumb, and the other finger is also involved, or it could imply a two-finger opposition).
+    *   Object Shape: Cylinder (The object being grasped is cylindrical, like a cup).
+    *   Contact Region: sidewall (The contact is on the side of the object).
+
+2.  **Analyze the provided reference knowledge snippet:**
+    *   Label: Precision:Inferior_Pincer
+    *   Coarse Type: Precision
+    *   Fine Type: Inferior Pincer
+    *   Opposition: Pad (Matches video context)
+    *   Thumb: Abd (Matches video context)
+    *   Virtual Fingers (VF2): 2 (This is a key match. The video context states "VF2: 1 vs 2", which implies a two-finger configuration, and the knowledge snippet specifies "VF2: 2". This suggests the grasp involves two fingers opposing the thumb, or a similar configuration that results in a "2" for VF2. The "1 vs 2" in the video context might be interpreted as one virtual finger (thumb) opposing another virtual finger (or fingers) that collectively represent the other digits. Given the options, VF2: 2 is the closest match to the visual representation of a pincer-like grasp.)
+    *   Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder (Matches video context: Cylinder)
+    *   Contact Region: edge/sidewall (Matches video context: sidewall)
+
+3.  **Compare video context with available grasp labels:**
+    *   **Power:Large_Diameter**: Not a power grasp, and the object doesn't necessarily imply a large diameter requiring power.
+    *   **Power:Ring**: Not a power grasp, and the object is not being grasped in a ring-like manner.
+    *   **Precision:Prismatic_4_Finger**: The video context suggests a 2-finger opposition (VF2: 1 vs 2, likely meaning thumb vs. two fingers or thumb and one finger vs. another finger). This doesn't fit a 4-finger grasp.
+    *   **Precision:Inferior_Pincer**:
+        *   Coarse Type: Precision (Matches the nature of the grasp, which appears to be precise rather than power-based).
+        *   Fine Type: Inferior Pincer (This type of grasp typically involves the thumb and one or two fingers opposing each other to grasp a small object or a part of a larger object. The visual shows the thumb and at least one finger (likely two) on the sidewall of the cylinder. The "VF2: 1 vs 2" strongly suggests this configuration.)
+        *   Opposition: Pad (Matches)
+        *   Thumb: Abd (Matches)
+        *   VF2: 2 (Matches the interpretation of "1 vs 2" in the context of pincer grasps where the thumb is one component and the opposing digits are the other. The knowledge snippet explicitly states VF2: 2 for this grasp.)
+        *   Object Shape: Cylinder (Matches)
+        *   Contact Region: sidewall (Matches)
+    *   **Precision:Precision_Sphere**: The object is a cylinder, not a sphere.
+    *   **Intermediate:Lateral**: Lateral grasps involve the thumb pad or side of the thumb pressing against the side of an object, often with fingers providing support. While there's contact on the sidewall, the opposition with fingers suggests a pincer grasp rather than a purely lateral grasp.
+    *   **Power:Adducted_Thumb**: The thumb is abducted (Abd), not adducted.
+
+4.  **Conclusion:** The "Precision:Inferior_Pincer" label aligns perfectly with all the provided context and the reference knowledge snippet. The opposition type (Pad), thumb position (Abd), virtual fingers (VF2: 2, inferred from "1 vs 2" and the knowledge snippet), object shape (Cylinder), and contact region (sidewall) all match.
+
+Final Answer Derivation:
+The provided context attributes (Opposition Type: Pad, Thumb Position: Abd, Virtual Fingers: VF2: 1 vs 2, Object Shape: Cylinder, Contact Region: sidewall) strongly match the reference knowledge snippet for "Precision:Inferior_Pincer" (Opposition: Pad, Thumb: Abd, VF2: 2, Object Shape: Cylinder, Contact Region: edge/sidewall). The "VF2: 1 vs 2" in the video context is interpreted as the thumb (one virtual finger) opposing the other digits (represented as two virtual fingers in the knowledge snippet for this grasp type).
+
+Final Grasp: Precision:Inferior_Pincer
+2026-01-17 02:30:52,859 - ========================================
+2026-01-17 02:30:53,527 - ========================================
+2026-01-17 02:30:53,528 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:53,528 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:53,528 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Inferior_Pincer
+  Coarse Type: Precision
+  Fine Type: Inferior Pincer
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2
+  Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder
+  Contact Region: edge/sidewall
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:53,528 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's the step-by-step reasoning:
+
+1.  **Analyze the provided context from the video:**
+    *   Opposition Type: Pad
+    *   Thumb Position: Abd (Abducted)
+    *   Virtual Fingers (VF2): 1 vs 2 (This indicates the number of fingers on each side of the object. In this case, it implies one side has 1 finger and the other has 2 fingers, or a similar configuration where the fingers are distributed across the object's circumference).
+    *   Object Shape: Cylinder
+    *   Contact Region: sidewall
+
+2.  **Analyze the provided reference knowledge snippet for "Precision:Inferior_Pincer":**
+    *   Coarse Type: Precision
+    *   Fine Type: Inferior Pincer
+    *   Opposition: Pad (Matches video context)
+    *   Thumb: Abd (Matches video context)
+    *   Virtual Fingers (VF2): 2 (This is a slight discrepancy with the video context "1 vs 2". However, "Inferior Pincer" often involves the thumb and one or two fingers. The "1 vs 2" could be interpreted as the thumb (1) opposing the fingers (2) or vice-versa, or a combination. Given the other strong matches, this might be a flexible interpretation or a slight difference in how VF2 is reported).
+    *   Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder (Matches video context "Cylinder")
+    *   Contact Region: edge/sidewall (Matches video context "sidewall")
+
+3.  **Compare the video context with the knowledge snippet:**
+    *   Opposition Type: "Pad" matches.
+    *   Thumb Position: "Abd" matches.
+    *   Object Shape: "Cylinder" matches.
+    *   Contact Region: "sidewall" matches "edge/sidewall".
+    *   Virtual Fingers (VF2): The video states "1 vs 2", while the knowledge snippet states "2". This is the only point of potential divergence. However, the "Inferior Pincer" grasp typically involves the thumb and one or two fingers opposing each other. The "1 vs 2" could be interpreted as the thumb (1) and two fingers (2) on the other side, or a similar arrangement. Given the strong alignment on other key features (Opposition, Thumb Position, Object Shape, Contact Region), and that "Inferior Pincer" is a plausible grasp for a cylinder using the sidewall with thumb opposition, this is the most likely match.
+
+4.  **Evaluate other possible grasps (internal check):**
+    *   Power:Large_Diameter: Unlikely, as the context points to precision.
+    *   Power:Ring: Unlikely, as the object is a cylinder and the grasp doesn't appear to be a ring grasp.
+    *   Precision:Prismatic_4_Finger: Unlikely, as the object is a cylinder and the grasp doesn't seem to involve all four fingers in a prismatic manner.
+    *   Precision:Inferior_Pincer: Strong match based on the analysis above.
+    *   Precision:Precision_Sphere: Unlikely, as the object is a cylinder, not a sphere.
+    *   Intermediate:Lateral: Unlikely, as the context points to precision and opposition.
+    *   Power:Adducted_Thumb: Unlikely, as the thumb is described as "Abd" (abducted).
+
+5.  **Conclusion:** The "Precision:Inferior_Pincer" grasp is the best match due to the strong alignment of Opposition Type, Thumb Position, Object Shape, and Contact Region. The VF2 discrepancy is minor and can be reconciled with the typical configuration of an inferior pincer grasp.
+
+Final Grasp: Precision:Inferior_Pincer
+2026-01-17 02:30:53,528 - ========================================
+2026-01-17 02:30:54,576 - ========================================
+2026-01-17 02:30:54,576 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:54,576 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (left and right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:54,576 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[LEFT HAND Info]:
+- Grasp Taxonomy (technical): Prismatic_4_Finger
+- Grasp Taxonomy (natural): prismatic 4 finger
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Prismatic_4_Finger
+- Grasp Taxonomy (natural): prismatic 4 finger
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:54,576 - RESPONSE:
+Use the left hand with a prismatic 4 finger grasp to pick up the rim of a white paper cup and use the right hand with a prismatic 4 finger grasp to place the lid onto the cup.
+2026-01-17 02:30:54,576 - ========================================
+2026-01-17 02:30:54,763 - ========================================
+2026-01-17 02:30:54,763 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:54,763 - SYSTEM PROMPT:
+You are an expert in Grasp Taxonomy. 
+Classify the grasp type based on provided visual context and knowledge snippets.
+
+RULES:
+1) Use the provided attributes + retrieved knowledge as evidence.
+2) Reason step-by-step internally.
+3) Output MUST end with a single line in this exact format: "Final Grasp: Coarse:Fine".
+4) Allowed labels: Power:Large_Diameter, Power:Ring, Precision:Prismatic_4_Finger, Precision:Inferior_Pincer, Precision:Precision_Sphere, Intermediate:Lateral, Power:Adducted_Thumb
+
+2026-01-17 02:30:54,763 - USER PROMPT:
+Context from video:
+- Opposition Type: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+- Object Shape: Cylinder
+- Contact Region: sidewall
+
+Reference Knowledge Snippets:
+- Label: Precision:Inferior_Pincer
+  Coarse Type: Precision
+  Fine Type: Inferior Pincer
+  Opposition: Pad
+  Thumb: Abd
+  Virtual Fingers (VF2): 2
+  Object Shape: Small Feature/Edge, Tab/Pull-Tab, Rim/Edge, Cavity/Hole, Cylinder
+  Contact Region: edge/sidewall
+
+Identify the best matching grasp label from the video frames and context above.
+
+2026-01-17 02:30:54,764 - RESPONSE:
+The user is asking to classify a grasp based on visual context and provided knowledge snippets.
+
+Here's a step-by-step reasoning process:
+
+1.  **Analyze the provided context from the video:**
+    *   **Opposition Type:** Pad. This means the thumb and fingers are making contact with their fleshy pads.
+    *   **Thumb Position:** Abd (Abducted). The thumb is spread away from the palm.
+    *   **Virtual Fingers (VF2):** 1 vs 2. This indicates that one virtual finger (likely the thumb) is opposing two virtual fingers (likely index and middle fingers).
+    *   **Object Shape:** Cylinder. The object being grasped is cylindrical.
+    *   **Contact Region:** Sidewall. The contact is made on the side of the object.
+
+2.  **Analyze the provided reference knowledge snippet:**
+    *   **Label:** Precision:Inferior_Pincer
+    *   **Coarse Type:** Precision
+    *   **Fine Type:** Inferior Pincer
+    *   **Opposition:** Pad (Matches video context)
+    *   **Thumb:** Abd (Matches video context)
+    *   **Virtual Fingers (VF2):** 2 (This is a discrepancy. The video context states "1 vs 2", which implies the thumb is one virtual finger and the opposing fingers are two. The knowledge snippet states "VF2: 2". This usually refers to the number of *opposing* virtual fingers. If VF2 refers to the *total* number of virtual fingers involved in the opposition, then "1 vs 2" would mean 3 total, which doesn't fit. However, in grasp taxonomy, VF2 often refers to the number of fingers opposing the thumb. So, "1 vs 2" means 1 thumb opposing 2 fingers. The knowledge snippet's "VF2: 2" likely refers to the two fingers opposing the thumb.)
+    *   **Object Shape:** Cylinder (Matches video context)
+    *   **Contact Region:** edge/sidewall (Matches video context's "sidewall")
+
+3.  **Compare context with knowledge snippet:**
+    *   Opposition Type: Pad (Match)
+    *   Thumb Position: Abd (Match)
+    *   Object Shape: Cylinder (Match)
+    *   Contact Region: Sidewall (Match)
+    *   Virtual Fingers (VF2): The video context "1 vs 2" strongly suggests a grasp where the thumb opposes two fingers. The knowledge snippet's "VF2: 2" aligns with this interpretation, meaning two fingers are opposing the thumb. This is characteristic of an inferior pincer grasp.
+
+4.  **Evaluate the "Precision:Inferior_Pincer" label:**
+    *   **Coarse Type: Precision:** This is a precision grasp because it involves fine motor control and opposition of digits to manipulate a smaller object or a specific part of an object. The context of using pads for opposition and the specific finger/thumb configuration points to precision.
+    *   **Fine Type: Inferior Pincer:** An inferior pincer grasp typically involves the thumb pad opposing the pads of the index and middle fingers, often used for cylindrical objects or objects with a rim. The "1 vs 2" virtual finger configuration, pad opposition, and sidewall contact on a cylinder are all consistent with an inferior pincer grasp.
+
+5.  **Consider other possible labels (and why they don't fit):**
+    *   **Power:Large_Diameter:** This is a power grasp, not precision. The object is a cup, which could be considered large, but the *manner* of grasping (pad opposition, specific finger configuration) is precision-oriented.
+    *   **Power:Ring:** This is a power grasp, typically around a ring-shaped object. Not applicable here.
+    *   **Precision:Prismatic_4_Finger:** This involves four fingers and a thumb, often for prismatic objects. The "1 vs 2" virtual finger configuration doesn't fit.
+    *   **Precision:Inferior_Pincer:** This is the candidate.
+    *   **Precision:Precision_Sphere:** This is for spherical objects. The object is a cylinder.
+    *   **Intermediate:Lateral:** This involves the side of the thumb against the side of a finger. The context indicates pad opposition.
+    *   **Power:Adducted_Thumb:** This is a power grasp with the thumb adducted (tucked in). The context states the thumb is abducted.
+
+6.  **Conclusion:** All the provided contextual cues (Opposition Type: Pad, Thumb Position: Abd, Virtual Fingers: 1 vs 2, Object Shape: Cylinder, Contact Region: Sidewall) strongly align with the characteristics of the "Precision:Inferior_Pincer" grasp as described in the reference knowledge snippet. The "VF2: 2" in the knowledge snippet, when interpreted as the number of opposing fingers, confirms this.
+
+Final Answer should be in the format "Coarse:Fine".
+
+Final Grasp: Precision:Inferior_Pincer
+2026-01-17 02:30:54,764 - ========================================
+2026-01-17 02:30:55,043 - ========================================
+2026-01-17 02:30:55,043 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:55,043 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (left and right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:55,043 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[LEFT HAND Info]:
+- Grasp Taxonomy (technical): Prismatic_4_Finger
+- Grasp Taxonomy (natural): prismatic 4 finger
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Prismatic_4_Finger
+- Grasp Taxonomy (natural): prismatic 4 finger
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:55,043 - RESPONSE:
+Use the left hand with a prismatic 4 finger grasp to pick up the rim of a white paper cup and use the right hand with a prismatic 4 finger grasp to place a lid onto the cup.
+2026-01-17 02:30:55,043 - ========================================
+2026-01-17 02:30:55,912 - ========================================
+2026-01-17 02:30:55,912 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:55,912 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (left and right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:55,912 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[LEFT HAND Info]:
+- Grasp Taxonomy (technical): Prismatic_4_Finger
+- Grasp Taxonomy (natural): prismatic 4 finger
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Prismatic_4_Finger
+- Grasp Taxonomy (natural): prismatic 4 finger
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:55,912 - RESPONSE:
+Use the left hand with a prismatic 4 finger grasp to pick up the rim of a paper cup and use the right hand with a prismatic 4 finger grasp to place a lid onto the cup.
+2026-01-17 02:30:55,912 - ========================================
+2026-01-17 02:30:57,413 - ========================================
+2026-01-17 02:30:57,413 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:57,413 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (left and right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:57,413 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[LEFT HAND Info]:
+- Grasp Taxonomy (technical): Prismatic_4_Finger
+- Grasp Taxonomy (natural): prismatic 4 finger
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Inferior_Pincer
+- Grasp Taxonomy (natural): inferior pincer
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:57,413 - RESPONSE:
+Use the left hand with a prismatic 4 finger grasp to hold the body of a white paper cup and use the right hand with an inferior pincer grasp to place the lid onto the cup.
+2026-01-17 02:30:57,413 - ========================================
+2026-01-17 02:30:57,722 - ========================================
+2026-01-17 02:30:57,722 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:57,722 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (left and right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:57,722 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[LEFT HAND Info]:
+- Grasp Taxonomy (technical): Large_Diameter
+- Grasp Taxonomy (natural): large diameter
+- Opposition: Palm
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2-5
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Inferior_Pincer
+- Grasp Taxonomy (natural): inferior pincer
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:57,722 - RESPONSE:
+Use the left hand with a large diameter grasp to pick up the base of a white cup and use the right hand with an inferior pincer grasp to pick up the lid of another white cup.
+2026-01-17 02:30:57,723 - ========================================
+2026-01-17 02:30:59,440 - ========================================
+2026-01-17 02:30:59,440 - MODEL: gemini-2.5-flash-lite
+2026-01-17 02:30:59,440 - SYSTEM PROMPT:
+You are a video annotation AI specialized in human manipulation tasks in first-person videos.
+
+TASK: Generate a single-sentence task description summarizing the video.
+
+REQUIREMENTS:
+1. Objects & Affordances: Mention the objects being manipulated, their features, and SPECIFICALLY where they are grasped (functional affordance, e.g., "the handle of the mug", "the rim of the bowl").
+2. Actions & Spatial Context: Describe the actions (e.g., pick, place, pour) including spatial transitions if visible (e.g., "from the table to the shelf", "out of the box").
+3. Hands & Grasps: Mention specific hands (left and right) and their inferred grasp types.
+4. Natural Grasp Names: Use the "natural" version of the grasp taxonomy (e.g., use "prismatic 3 finger" instead of "Prismatic_3_Finger"). Integrate it smoothly into the sentence.
+5. Mandatory inclusion: You MUST explicitly mention the grasp type for each active hand.
+6. Style: Imperative style (e.g., "Use the right hand to...").
+7. Output format: Plain text only. NO JSON, NO explanations. ONE sentence only.
+
+EXAMPLE:
+Use the right hand with a prismatic 3 finger grasp to pick up the handle of a blue mug and use the left hand with a lateral grasp to steady the mug's base.
+
+2026-01-17 02:30:59,440 - USER PROMPT:
+Inferred Grasp Attributes for Active Hands:
+
+[LEFT HAND Info]:
+- Grasp Taxonomy (technical): Inferior_Pincer
+- Grasp Taxonomy (natural): inferior pincer
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+
+[RIGHT HAND Info]:
+- Grasp Taxonomy (technical): Inferior_Pincer
+- Grasp Taxonomy (natural): inferior pincer
+- Opposition: Pad
+- Thumb Position: Abd
+- Virtual Fingers: VF2: 1 vs 2
+
+
+Analyze the video and describe the task as requested.
+
+2026-01-17 02:30:59,440 - RESPONSE:
+Use the left hand with an inferior pincer grasp to pick up the lid of a white cup and use the right hand with an inferior pincer grasp to pick up the white cup.
+2026-01-17 02:30:59,440 - ========================================

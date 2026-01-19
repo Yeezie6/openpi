@@ -232,7 +232,7 @@ RULES:
             'Ring-Plate', 'Sheet', 'Small Ball-like Object', 'Small Feature', 
             'Sphere', 'Tab', 'Tapered Cylinder', 'Torus'
         ]
-        contact_regions = ['edge', 'rim', 'sidewall', 'surface']
+        contact_regions = ['edge', 'rim', 'sidewall', 'surface', 'face']
 
         system_prompt = f"""You are an expert in human grasping and grasp taxonomy.
 Focus ONLY on the {hand_side.upper()} HAND (visible on the {hand_side} side of the image).
@@ -244,33 +244,38 @@ Infer the following attributes for the {hand_side.upper()} HAND:
    - Pad: Primary opposition between thumb and other fingers using the pads of the fingertips (front-to-front).
    - Side: Primary opposition surface comes from the sides of the fingers (lateral, typical for pinching thin sheets or edges).
 2) Thumb position: Abd (abducted/open), Add (adducted/close to palm).
-3) Virtual fingers (VF): Identify digits acting together (1=thumb, 2=index, 3=middle, 4=ring, 5=little). Format: "VF2: 1 vs 2-5".
-4) Object Shape: Select the best fit from: {', '.join(shapes)}
-5) Contact Region: Select the best fit from: {', '.join(contact_regions)}
+3) Virtual fingers (VF): Identify digits acting together. Format MUST be either "VF2: 1 vs 2" or "VF2: 1 vs 2-5".
+4) Object Shape: Select the top 1-3 best fits from: {', '.join(shapes)} (comma-separated).
+5) Contact Region: Select the top 1-3 best fits from: {', '.join(contact_regions)} (comma-separated).
 
 INSTRUCTIONS:
 Opposition Type (Palm/Pad/Side):
-- Check palm contact first: if the palm/thenar/hypothenar has clear surface contact bearing or wrapping the object, choose "Palm".
-- If NOT palm contact, decide between:
-  - "Pad" when the primary opposition uses fingertip pads (front-to-front).
-  - "Side" when the primary opposition uses lateral finger sides (edge/sheet pinching).
+- "Palm": Choose this if fingers wrap around the object and the object likely rests against the palm (Power Grasp). Note: In first-person video, the palm itself is often occluded by the object. If you see fingers wrapping tightly around the object's body, INFER "Palm" contact.
+- "Pad": Choose this if the object is held specifically by the fingertips/thumb pad (Precision Grasp) creating a visible gap between the object and the palm.
+- "Side": Choose this if the primary opposition uses the lateral side of the fingers (e.g. pinching a key or thin sheet).
 
 Thumb Position (Abd/Add) — evidence-first:
-- First, locate the thumb base and the index base, then estimate the “first web space” (the V-shaped gap between thumb and index).
-- Determine whether the thumb is actively spread outward to oppose other fingers (independent opposing digit) or tucked toward the palm (palmar support).
-- Use the object ONLY to interpret visibility/occlusion (do NOT guess thumb position from grasp category).
+- Look at the “first web space” (the V-shaped gap between thumb and index).
+- "Abd" (Abducted): The web space is OPEN/stretched. The thumb creates a wide arch to oppose the fingertips (typical in Cylindrical, Spherical, and Pad-Precision grasps).
+- "Add" (Adducted): The web space is CLOSED/compressed. The thumb is pressed flat against the side of the index finger (Lateral pinch) or clamped down on top of the index finger (Power grasp).
 Decision rules:
-- Output "Abd" if the thumb-index gap is clearly large AND the thumb is visibly opened outward in an opposition posture.
-- Output "Add" if the thumb-index gap is small AND the thumb appears tucked/pressed toward the palm as support.
-- If the thumb base/web space is occluded or contradictory across frames, output "Unknown".
+- If thumb opposes fingertips with a wide gap -> "Abd".
+- If thumb presses against the side of index finger -> "Add".
+- If thumb wraps over the fist in a heavy power grasp -> "Add".
+- If uncertain due to occlusion, verify if the grasp resembles a Lateral Pinch (implies Add) or Precision/Cylindrical (implies Abd).
 
 Virtual Fingers (VF):
-- Identify which digits are in contact and act together as functional groups.
-- Use the compact range form: "2-3-4-5" MUST be written as "2-5".
-- Avoid illegal formats like "VF2: 1 vs 2-3-4-5".
+- Strictly output either "VF2: 1 vs 2" (thumb vs index) or "VF2: 1 vs 2-5" (thumb vs all fingers).
+- Do not output other variations.
 
 Object Shape + Contact Region:
-- Pick exactly one from the provided lists.
+- Pick the top 1-3 best fits derived from visual evidence if ambiguous. Use comma to separate them.
+- Contact Region Reasoning Guidelines:
+  - If you see "Wrapping around a cylinder" -> prioritize "sidewall".
+  - If you see "Pinching the outer ring of a plate/lid" -> prioritize "rim".
+  - If you see "Pressing/supporting a flat plane" -> prioritize "face".
+  - If you see "Contact occurs mainly along a narrow geometric edge or ridge (line-like contact)" -> prioritize "edge". Note: It is NOT a broad face, sidewall, rim, or curved surface.
+  - If you see "Wrapping around a spherical object" -> prioritize "surface".
 - If the object or contact region is not visible/ambiguous, output "Unknown".
 
 Temporal guidance:
